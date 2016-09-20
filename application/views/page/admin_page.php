@@ -1,5 +1,5 @@
 <!-- ตัวแปร useScript ต้องใส่ทุกครั้ง สำหรับเรียก JS ของหน้า Page นั้นๆ -->
-<script> var useScript = 'admin'; </script>
+<script> var useScript = "admin"; </script>
 
 <?php
 

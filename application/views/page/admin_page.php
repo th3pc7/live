@@ -14,8 +14,12 @@
 <?php $this->page->load_tmp('header_tmp', null); ?>
 
 
-<div style="float:left;"><?php $this->page->load_tmp('form_add_tmp', null); ?></div>
-<div style="float:left;"><?php $this->page->load_tmp('table_link_tmp', $page_data); ?></div>
+<div style="float:left;">
+  <?php $this->page->load_tmp('form_add_tmp', null); ?>
+</div>
+<div id="paste-table" style="float:left;">
+  <?php $this->page->load_tmp('table_link_tmp', $page_data); ?>
+</div>
 <div class="clearfix"></div>
 
 

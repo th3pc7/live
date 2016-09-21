@@ -817,3 +817,653 @@ DEBUG - 2016-09-21 05:41:18 --> UTF-8 Support Enabled
 DEBUG - 2016-09-21 05:41:18 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2016-09-21 05:41:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
 DEBUG - 2016-09-21 05:41:18 --> Total execution time: 0.0288
+DEBUG - 2016-09-21 05:45:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:14 --> Total execution time: 0.0389
+DEBUG - 2016-09-21 05:45:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:17 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:17 --> Total execution time: 0.0287
+DEBUG - 2016-09-21 05:45:35 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:35 --> Total execution time: 0.0307
+DEBUG - 2016-09-21 05:45:45 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:45 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:45 --> Total execution time: 0.0373
+DEBUG - 2016-09-21 05:45:45 --> Total execution time: 0.0374
+DEBUG - 2016-09-21 05:45:48 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:48 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:48 --> Total execution time: 0.0292
+DEBUG - 2016-09-21 05:45:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:45:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:45:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:45:49 --> Total execution time: 0.0294
+DEBUG - 2016-09-21 05:46:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:46:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:46:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:46:08 --> Total execution time: 0.0412
+DEBUG - 2016-09-21 05:46:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:46:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:46:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:46:49 --> Total execution time: 0.0295
+DEBUG - 2016-09-21 05:46:51 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:46:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:46:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:46:51 --> Total execution time: 0.0283
+DEBUG - 2016-09-21 05:47:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:47:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:47:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:47:05 --> Total execution time: 0.0286
+DEBUG - 2016-09-21 05:48:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:48:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:48:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:48:14 --> Total execution time: 0.0298
+DEBUG - 2016-09-21 05:48:31 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:48:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:48:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:48:31 --> Total execution time: 0.0304
+DEBUG - 2016-09-21 05:51:05 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:51:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:51:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:51:05 --> Total execution time: 0.0301
+DEBUG - 2016-09-21 05:51:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:51:18 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:51:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:51:18 --> Total execution time: 0.0299
+DEBUG - 2016-09-21 05:52:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:04 --> Total execution time: 0.0285
+DEBUG - 2016-09-21 05:52:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:06 --> Total execution time: 0.0291
+DEBUG - 2016-09-21 05:52:09 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:09 --> Total execution time: 0.0293
+DEBUG - 2016-09-21 05:52:15 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:15 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:15 --> Total execution time: 0.0291
+DEBUG - 2016-09-21 05:52:29 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:29 --> Total execution time: 0.0305
+DEBUG - 2016-09-21 05:52:34 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:34 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:34 --> Total execution time: 0.0303
+DEBUG - 2016-09-21 05:52:36 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:36 --> Total execution time: 0.0296
+DEBUG - 2016-09-21 05:52:43 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:43 --> Total execution time: 0.0286
+DEBUG - 2016-09-21 05:52:47 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:47 --> Total execution time: 0.0301
+DEBUG - 2016-09-21 05:52:52 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:52 --> Total execution time: 0.0287
+DEBUG - 2016-09-21 05:52:57 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:57 --> Total execution time: 0.0287
+DEBUG - 2016-09-21 05:52:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:52:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:52:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:52:59 --> Total execution time: 0.0290
+DEBUG - 2016-09-21 05:53:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:53:01 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:53:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:53:01 --> Total execution time: 0.0356
+DEBUG - 2016-09-21 05:53:02 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:53:02 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:53:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:53:02 --> Total execution time: 0.0305
+DEBUG - 2016-09-21 05:53:07 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:53:07 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:53:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:53:07 --> Total execution time: 0.0294
+DEBUG - 2016-09-21 05:53:09 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:53:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:53:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:53:09 --> Total execution time: 0.0307
+DEBUG - 2016-09-21 05:53:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:53:17 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:53:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:53:17 --> Total execution time: 0.0305
+DEBUG - 2016-09-21 05:55:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:00 --> Total execution time: 0.0303
+DEBUG - 2016-09-21 05:55:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:06 --> Total execution time: 0.0305
+DEBUG - 2016-09-21 05:55:16 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:16 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 05:55:22 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:22 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:22 --> Total execution time: 0.0299
+DEBUG - 2016-09-21 05:55:48 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:48 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:48 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 05:55:52 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:55:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:55:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:55:52 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 05:57:43 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:57:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:57:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:57:43 --> Total execution time: 0.0307
+DEBUG - 2016-09-21 05:59:58 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:59:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:59:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 05:59:58 --> Total execution time: 0.0306
+DEBUG - 2016-09-21 05:59:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 05:59:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 05:59:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 05:59:59 --> Severity: Error --> Call to undefined method CI_Loader::librarie() C:\wamp64\www\live\application\controllers\Admin.php 37
+DEBUG - 2016-09-21 06:00:05 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:00:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:00:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:00:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:00:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:00:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:00:12 --> Severity: Error --> Call to undefined method CI_Loader::librarie() C:\wamp64\www\live\application\controllers\Admin.php 37
+DEBUG - 2016-09-21 06:01:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:01:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:01:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:01:08 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 06:01:11 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:01:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:01:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:01:11 --> C:\wamp64\www\live\application\libraries/Upload.php exists, but does not declare CI_Upload
+DEBUG - 2016-09-21 06:01:11 --> Total execution time: 0.0344
+DEBUG - 2016-09-21 06:19:33 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:19:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:19:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:19:33 --> Total execution time: 0.0390
+DEBUG - 2016-09-21 06:19:46 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:19:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:19:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:19:46 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\wamp64\www\live\application\libraries\Upload_pp.php 16
+DEBUG - 2016-09-21 06:21:02 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:21:02 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:21:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:21:02 --> Total execution time: 0.0301
+DEBUG - 2016-09-21 06:21:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:21:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:21:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:21:08 --> Severity: Parsing Error --> syntax error, unexpected end of file, expecting function (T_FUNCTION) C:\wamp64\www\live\application\libraries\Upload_pp.php 25
+DEBUG - 2016-09-21 06:21:39 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:21:39 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:21:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:21:39 --> Non-existent class: Upload_pp
+DEBUG - 2016-09-21 06:22:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:22:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:22:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:22:00 --> The upload path does not appear to be valid.
+DEBUG - 2016-09-21 06:22:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:22:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:22:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:22:49 --> The upload path does not appear to be valid.
+DEBUG - 2016-09-21 06:23:33 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:23:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:23:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 06:23:33 --> The upload path does not appear to be valid.
+DEBUG - 2016-09-21 06:24:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:24:01 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:24:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:24:01 --> Total execution time: 0.0451
+DEBUG - 2016-09-21 06:25:30 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:25:30 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:25:30 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:25:30 --> Total execution time: 0.0425
+DEBUG - 2016-09-21 06:32:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:32:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:32:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:32:06 --> Total execution time: 0.0327
+DEBUG - 2016-09-21 06:34:46 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:34:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:34:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:34:46 --> The filetype you are attempting to upload is not allowed.
+DEBUG - 2016-09-21 06:36:56 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:36:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:36:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:36:56 --> The filetype you are attempting to upload is not allowed.
+DEBUG - 2016-09-21 06:37:11 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:37:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:37:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:37:11 --> Total execution time: 0.0318
+DEBUG - 2016-09-21 06:39:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:39:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:39:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:39:24 --> Total execution time: 0.0422
+DEBUG - 2016-09-21 06:39:42 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 06:39:42 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 06:39:42 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 06:39:42 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 07:14:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:14:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:14:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:14:50 --> Total execution time: 0.3280
+DEBUG - 2016-09-21 07:15:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:15:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:15:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:15:24 --> Total execution time: 0.0426
+DEBUG - 2016-09-21 07:15:38 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:15:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:15:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:15:38 --> Total execution time: 0.0293
+DEBUG - 2016-09-21 07:19:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:19:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:19:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:19:04 --> Total execution time: 0.0390
+DEBUG - 2016-09-21 07:20:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:20:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:20:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:20:59 --> Total execution time: 0.0395
+DEBUG - 2016-09-21 07:26:21 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:26:21 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:26:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:26:21 --> Total execution time: 0.0396
+DEBUG - 2016-09-21 07:26:36 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:26:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:26:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:26:36 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 07:26:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:26:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:26:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:26:49 --> Total execution time: 0.0327
+DEBUG - 2016-09-21 07:27:25 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:27:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:27:25 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:27:25 --> Total execution time: 0.0304
+DEBUG - 2016-09-21 07:28:34 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:28:34 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:28:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:28:34 --> Total execution time: 0.0290
+DEBUG - 2016-09-21 07:28:46 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:28:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:28:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:28:46 --> Total execution time: 0.0295
+DEBUG - 2016-09-21 07:28:47 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:28:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:28:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:28:47 --> Total execution time: 0.0401
+DEBUG - 2016-09-21 07:30:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:30:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:30:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:30:14 --> Total execution time: 0.0294
+DEBUG - 2016-09-21 07:32:11 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:32:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:32:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:32:12 --> Total execution time: 0.0296
+DEBUG - 2016-09-21 07:35:26 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:35:26 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:35:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:35:26 --> Total execution time: 0.0389
+DEBUG - 2016-09-21 07:35:40 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:35:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:35:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:35:40 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 07:35:50 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:35:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:35:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:35:50 --> Total execution time: 0.0291
+DEBUG - 2016-09-21 07:36:15 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:36:15 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:36:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:36:15 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 07:37:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:37:17 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:37:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:37:17 --> Total execution time: 0.0305
+DEBUG - 2016-09-21 07:38:19 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:38:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:38:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:38:19 --> Total execution time: 0.0297
+DEBUG - 2016-09-21 07:38:28 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:38:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:38:28 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:38:28 --> Total execution time: 0.0293
+DEBUG - 2016-09-21 07:38:50 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:38:50 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:38:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:38:50 --> Total execution time: 0.0327
+DEBUG - 2016-09-21 07:38:53 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:38:53 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:38:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:38:53 --> Total execution time: 0.0292
+DEBUG - 2016-09-21 07:38:55 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:38:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:38:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:38:55 --> Total execution time: 0.0294
+DEBUG - 2016-09-21 07:40:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:40:01 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-09-21 07:40:01 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' C:\wamp64\www\live\application\controllers\Admin.php 31
+DEBUG - 2016-09-21 07:40:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:40:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:40:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 07:40:08 --> Severity: Notice --> Undefined index: status C:\wamp64\www\live\application\views\tmp\table_link_tmp.php 16
+ERROR - 2016-09-21 07:40:08 --> Severity: Notice --> Undefined index: datetime C:\wamp64\www\live\application\views\tmp\table_link_tmp.php 23
+DEBUG - 2016-09-21 07:40:08 --> Total execution time: 0.0582
+DEBUG - 2016-09-21 07:41:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:41:08 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:41:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+ERROR - 2016-09-21 07:41:08 --> Severity: Notice --> Undefined index: datetime C:\wamp64\www\live\application\views\tmp\table_link_tmp.php 23
+DEBUG - 2016-09-21 07:41:08 --> Total execution time: 0.0357
+DEBUG - 2016-09-21 07:41:37 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:41:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:41:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:41:37 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 07:42:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:42:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:42:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:42:12 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 07:42:37 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:42:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:42:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:42:37 --> Total execution time: 0.0385
+DEBUG - 2016-09-21 07:42:53 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:42:53 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:42:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:42:53 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 07:43:20 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:43:20 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:43:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:43:20 --> Total execution time: 0.0312
+DEBUG - 2016-09-21 07:43:29 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:43:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:43:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:43:29 --> Total execution time: 0.0385
+DEBUG - 2016-09-21 07:44:34 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:44:34 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:44:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:44:34 --> Total execution time: 0.0377
+DEBUG - 2016-09-21 07:45:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:45:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:45:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:45:00 --> Total execution time: 0.0376
+DEBUG - 2016-09-21 07:45:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:45:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:45:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:45:12 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 07:46:45 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:46:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:46:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:46:45 --> Total execution time: 0.0418
+DEBUG - 2016-09-21 07:46:58 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:46:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:46:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:46:58 --> Total execution time: 0.0388
+DEBUG - 2016-09-21 07:47:55 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:47:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:47:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:47:55 --> Total execution time: 0.0312
+DEBUG - 2016-09-21 07:48:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:48:01 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:48:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:48:01 --> Total execution time: 0.0482
+DEBUG - 2016-09-21 07:48:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:48:04 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:48:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:48:04 --> Total execution time: 0.0307
+DEBUG - 2016-09-21 07:48:53 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:48:53 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:48:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:48:53 --> Total execution time: 0.0316
+DEBUG - 2016-09-21 07:49:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:49:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:49:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:49:59 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 07:50:51 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:50:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:50:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:50:51 --> Total execution time: 0.0327
+DEBUG - 2016-09-21 07:51:03 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:51:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:51:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:51:03 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 07:51:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:51:18 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:51:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:51:18 --> Total execution time: 0.0329
+DEBUG - 2016-09-21 07:53:19 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:53:19 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:53:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:53:19 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 07:54:42 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:54:42 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:54:42 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:54:42 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 07:55:02 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:55:02 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:55:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:55:02 --> Total execution time: 0.0284
+DEBUG - 2016-09-21 07:55:11 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:55:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:55:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:55:11 --> Total execution time: 0.0296
+DEBUG - 2016-09-21 07:55:13 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:55:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:55:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:55:13 --> Total execution time: 0.0308
+DEBUG - 2016-09-21 07:58:25 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:58:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:58:25 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:58:25 --> Total execution time: 0.0407
+DEBUG - 2016-09-21 07:58:34 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:58:34 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:58:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:58:34 --> Total execution time: 0.0308
+DEBUG - 2016-09-21 07:58:44 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:58:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:58:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:58:44 --> Total execution time: 0.0311
+DEBUG - 2016-09-21 07:59:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 07:59:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 07:59:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 07:59:00 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 08:00:02 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:00:02 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:00:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:00:02 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:00:11 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:00:11 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:00:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:00:11 --> Total execution time: 0.0312
+DEBUG - 2016-09-21 08:02:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:02:17 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:02:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:02:17 --> Total execution time: 0.0310
+DEBUG - 2016-09-21 08:02:22 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:02:22 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:02:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:02:22 --> Total execution time: 0.0284
+DEBUG - 2016-09-21 08:02:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:02:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:02:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:02:24 --> Total execution time: 0.0308
+DEBUG - 2016-09-21 08:04:25 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:04:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:04:25 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:04:25 --> Total execution time: 0.0323
+DEBUG - 2016-09-21 08:04:38 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:04:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:04:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:04:38 --> Total execution time: 0.0308
+DEBUG - 2016-09-21 08:04:48 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:04:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:04:48 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:04:48 --> Total execution time: 0.0322
+DEBUG - 2016-09-21 08:05:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:05:01 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:05:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:05:01 --> Total execution time: 0.0314
+DEBUG - 2016-09-21 08:06:03 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:06:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:06:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:06:03 --> Total execution time: 0.0327
+DEBUG - 2016-09-21 08:07:25 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:07:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:07:25 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:07:25 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 08:08:55 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:08:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:08:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:08:55 --> Total execution time: 0.0411
+DEBUG - 2016-09-21 08:09:03 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:09:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:09:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:09:03 --> Total execution time: 0.0314
+DEBUG - 2016-09-21 08:09:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:09:06 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:09:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:09:06 --> Total execution time: 0.0310
+DEBUG - 2016-09-21 08:09:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:09:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:09:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:09:14 --> Total execution time: 0.0321
+DEBUG - 2016-09-21 08:09:16 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:09:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:09:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:09:16 --> Total execution time: 0.0416
+DEBUG - 2016-09-21 08:10:13 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:10:13 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:10:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:10:13 --> Total execution time: 0.0316
+DEBUG - 2016-09-21 08:10:23 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:10:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:10:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:10:23 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 08:10:47 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:10:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:10:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:10:47 --> Total execution time: 0.0323
+DEBUG - 2016-09-21 08:10:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:10:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:10:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:10:49 --> Total execution time: 0.0309
+DEBUG - 2016-09-21 08:10:56 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:10:56 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:10:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:10:56 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 08:11:38 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:11:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:11:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:11:38 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:11:52 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:11:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:11:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:11:52 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 08:12:32 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:12:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:12:32 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:12:32 --> Total execution time: 0.0361
+DEBUG - 2016-09-21 08:13:03 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:13:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:13:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:13:03 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:13:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:13:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:13:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:13:24 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 08:15:40 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:15:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:15:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:15:40 --> Total execution time: 0.0329
+DEBUG - 2016-09-21 08:15:58 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:15:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:15:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:15:59 --> Total execution time: 0.0437
+DEBUG - 2016-09-21 08:16:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:16:00 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:16:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:16:00 --> Total execution time: 0.0320
+DEBUG - 2016-09-21 08:16:09 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:16:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:16:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:16:09 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:17:10 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:10 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:10 --> Total execution time: 0.0313
+DEBUG - 2016-09-21 08:17:31 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:31 --> Total execution time: 0.0335
+DEBUG - 2016-09-21 08:17:33 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:33 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:17:46 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:46 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:46 --> Total execution time: 0.0317
+DEBUG - 2016-09-21 08:17:47 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:47 --> Total execution time: 0.0323
+DEBUG - 2016-09-21 08:17:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:49 --> Total execution time: 0.0319
+DEBUG - 2016-09-21 08:17:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:17:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:17:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:17:59 --> Total execution time: 0.0311
+DEBUG - 2016-09-21 08:18:45 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:18:45 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:18:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:18:45 --> Total execution time: 0.0882
+DEBUG - 2016-09-21 08:18:48 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:18:48 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:18:48 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:18:48 --> Total execution time: 0.0321
+DEBUG - 2016-09-21 08:18:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 08:18:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 08:18:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 08:18:59 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 09:51:23 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 09:51:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 09:51:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 09:51:23 --> Total execution time: 0.0331
+DEBUG - 2016-09-21 09:51:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 09:51:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 09:51:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 09:51:24 --> Total execution time: 0.0319
+DEBUG - 2016-09-21 09:51:29 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 09:51:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 09:51:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 09:51:29 --> Total execution time: 0.0319
+DEBUG - 2016-09-21 10:18:32 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 10:18:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 10:18:32 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 10:18:32 --> Total execution time: 0.0322
+DEBUG - 2016-09-21 10:18:37 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 10:18:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 10:18:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 10:18:37 --> Total execution time: 0.0315
+DEBUG - 2016-09-21 10:18:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-21 10:18:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-09-21 10:18:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2016-09-21 10:18:59 --> Total execution time: 0.0317

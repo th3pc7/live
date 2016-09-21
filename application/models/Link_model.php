@@ -6,11 +6,13 @@ class Link_model extends CI_Model{
         parent::__construct();
     }
 
-    public function add_link($name, $link){
+    public function add_link($name, $link, $file_name, $owner_id){
         $this->db->insert('live_match',array(
             'name' => $name,
             'link' => $link,
-            'datetime' => date('Y-m-d H:i:s')
+            'image' => $file_name,
+            'owner_id' => $owner_id,
+            'create_datetime' => date('Y-m-d H:i:s')
         ));
         return $this->db->insert_id();
     }

@@ -10,3 +10,12 @@
   // ตัวอย่าง $this->page->load_tmp('login_tmp', $page_data);
 
 ?>
+
+<?php
+
+  foreach($chanal_data as $chanal){
+    if($chanal['chanal_status']==='disabled'){ continue; }
+    echo '<img src="'.$chanal['image'].'">';
+  }
+
+?>

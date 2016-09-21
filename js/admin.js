@@ -72,3 +72,55 @@ function ref_table(){
     $("#paste-table").html(data);
   }).fail(function(){ });
 }
+function ref_table_2(){
+  $.post("action/",{ action: "ref_table_2" },function(data){
+    $("#paste-table_2").html(data);
+  }).fail(function(){ });
+}
+
+function edit_ch(ev, id, field, defaults){
+  ev.preventDefault();
+  var value = prompt("ใส่ค่าใหม่ที่ต้องการ", defaults);
+  if(value===defaults||value==='undefined'||value===null||value===''||$.trim(value)===''){ return; }
+  $.post("action/",{ action: "edit_ch", id: id, field: field, value: value },function(data){
+    if(data==="pass"){
+      alert("สำเร็จ");
+      ref_table_2();
+    }
+    else{
+      alert(data);
+    }
+  }).fail(function(){
+    alert("เกิดข้อผิดพลาด !!!");
+  });
+}
+
+function edit_ch_st(ev, id, field, value){
+  ev.preventDefault();
+  $.post("action/",{ action: "edit_ch_st", id: id, field: field, value: value },function(data){
+    if(data==="pass"){
+      alert("สำเร็จ");
+      ref_table_2();
+    }
+    else{
+      alert(data);
+    }
+  }).fail(function(){
+    alert("เกิดข้อผิดพลาด !!!");
+  });
+}
+
+function close_ch(ev, id){
+  ev.preventDefault();
+  $.post("action/",{ action: "edit_ch", id: id, field: 'match_id', value: null },function(data){
+    if(data==="pass"){
+      alert("สำเร็จ");
+      ref_table_2();
+    }
+    else{
+      alert(data);
+    }
+  }).fail(function(){
+    alert("เกิดข้อผิดพลาด !!!");
+  });
+}

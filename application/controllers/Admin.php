@@ -39,6 +39,27 @@ class Admin extends CI_Controller {
             'links_data' => $this->link_model->load_link('*', null)
         )));
         break;
+      case 'ref_table_2':
+        $this->load->model('link_model');
+        $this->page->load_tmp('table_chanal_tmp', array(
+          'page_data' => array(
+            'chanal_data' => $this->link_model->load_chanal('*', null)
+        )));
+        break;
+      case 'edit_ch':
+        $this->load->model('link_model');
+        $this->link_model->edit_chanal($this->input->post('id'), array(
+          $this->input->post('field') => $this->input->post('value')
+        ));
+        echo 'pass';
+        break;
+      case 'edit_ch_st':
+        $this->load->model('link_model');
+        $this->link_model->edit_chanal($this->input->post('id'), array(
+          $this->input->post('field') => $this->input->post('value')
+        ));
+        echo 'pass';
+        break;
 			default:
 				die();
 		}
@@ -49,7 +70,8 @@ class Admin extends CI_Controller {
     $this->page->load_page('admin_page', array(
       'page_data' => array(
         'title' => 'staff | stream',
-        'links_data' => $this->link_model->load_link('*', null)
+        'links_data' => $this->link_model->load_link('*', null),
+        'chanal_data' => $this->link_model->load_chanal('*', null)
       )
     ));
   }

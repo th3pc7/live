@@ -57,7 +57,7 @@ function ObjPlayerss(config){
     }
   }
   init();
-  if(config.live===true){ setInterval_live_time(config); }
+  if(config.live===true&&(config.timestamp-parseInt(new Date().getTime()/1000))>0){ setInterval_live_time(config, MainProg); }
 }
 var params = {
   wmode: "direct",
@@ -67,6 +67,25 @@ var params = {
 };
 
 
-function setInterval_live_time(config){
-  //
+function setInterval_live_time(config, main){
+  var sum = config.timestamp - parseInt(new Date().getTime()/1000);
+  $("#vdo-names").html("จะเริ่มถ่ายทอดสดใน <span style='color:yellow;'>" + second_to_format(sum) + "</span>");
+  window.setCountLive = setInterval(function(){
+    var sum = config.timestamp - parseInt(new Date().getTime()/1000);
+    $("#vdo-names").html("จะเริ่มถ่ายทอดสดใน <span style='color:yellow;'>" + second_to_format(sum) + "</span>");
+    if(sum<=0){
+      main.Page.customLoadUrl(window.location.href, true);
+    }
+  },1000);
+}
+
+function second_to_format(s){
+  var hour = (s-(s%3600))/3600;
+  var sec = s - (hour*3600);
+  var min = (sec-(sec%60))/60;
+  sec = sec - (min*60);
+  hour = (hour.toString().length == 2) ? hour.toString():"0"+hour.toString();
+  min = (min.toString().length == 2) ? min.toString():"0"+min.toString();
+  sec = (sec.toString().length == 2) ? sec.toString():"0"+sec.toString();
+  return hour+":"+min+":"+sec;
 }

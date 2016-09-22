@@ -86,7 +86,7 @@ function ready_page(){
       width: document.querySelector("#paste-vdo").offsetWidth,
       number: 1,
       live: <?php echo $chanal_data['live']; ?>,
-      datetime: '<?php echo $chanal_data['datetime']; ?>'
+      timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
     });
   <?php else: ?>
     new ObjPlayerss({
@@ -96,7 +96,7 @@ function ready_page(){
       width: document.querySelector("#paste-vdo").offsetWidth,
       number: 1,
       live: false,
-      datetime: ''
+      timestamp: ''
     });
   <?php endif; ?>
 }

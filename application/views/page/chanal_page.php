@@ -112,7 +112,7 @@ function ObjDesktop(config){
 function ObjMobile(config){
   jwplayer("vdo_id_"+config.number).setup({
     file: config.link,
-    width: ""+document.querySelector("#first-section").offsetWidth,
+    width: ""+document.querySelector("#paste-vdo").offsetWidth,
     height: ""+(document.querySelector("#first-section").offsetWidth*(1/config.ratio)),
     primary: 'html5',
     hlshtml: true,

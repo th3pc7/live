@@ -11,20 +11,20 @@ function c_number($str_number,$point=2){
     else{ return null; }
 }
 
-function get_video_data_from_youtube($my_id){
-  $my_video_info = 'http://www.youtube.com/get_video_info?&video_id='.$my_id.'&asv=3&el=detailpage&hl=en_US';
+function get_video_data_from_youtube($vdo_id){
+  $load_video_info = 'http://www.youtube.com/get_video_info?&video_id='.$vdo_id.'&asv=3&el=detailpage&hl=en_US';
   $ch_load = curl_init();
-  curl_setopt($ch_load, CURLOPT_URL, $my_video_info);
+  curl_setopt($ch_load, CURLOPT_URL, $load_video_info);
   curl_setopt($ch_load, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($ch_load, CURLOPT_CONNECTTIMEOUT, 3);
-  $my_video_info = curl_exec($ch_load);
+  $load_video_info = curl_exec($ch_load);
   curl_close($ch_load);
   $url_encoded_fmt_stream_map = '';
   $thumbnail_url = '';
   $title = '';
   $type = '';
   $url = '';
-  parse_str($my_video_info);
+  parse_str($load_video_info);
   if(isset($url_encoded_fmt_stream_map)){ $my_formats_array = explode(',',$url_encoded_fmt_stream_map); }
   else { return false; }
   if(count($my_formats_array)===0){ return false; }

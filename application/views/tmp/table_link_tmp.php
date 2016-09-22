@@ -1,5 +1,5 @@
 <div style="padding:40px;">
-  <table class="table table-bordered" style="max-width:900px;">
+  <table class="table table-bordered" style="width:900px;">
     <thead>
       <tr>
         <td style="width:150px;"><b>ID</b></td>

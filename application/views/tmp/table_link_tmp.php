@@ -2,10 +2,10 @@
   <table class="table table-bordered" style="width:900px;">
     <thead>
       <tr>
-        <td style="width:150px;"><b>ID</b></td>
-        <td style="width:200px;"><b>ชื่อคู่</b></td>
+        <td style="width:100px;"><b>ID</b></td>
+        <td style="width:300px;"><b>ชื่อคู่</b></td>
         <td style="width:400px;"><b>ลิ้งสตรีม</b></td>
-        <td style="width:150px;"><b>วันเวลา</b></td>
+        <td style="width:100px;"><b>วันเวลา</b></td>
       </tr>
     </thead>
     <tbody>

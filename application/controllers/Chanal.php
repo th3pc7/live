@@ -22,12 +22,8 @@ class Chanal extends CI_Controller {
     $this->load->model('link_model');
     $chanal_id = c_number($this->uri->segment(2));
     if($chanal_id===null){
-      $this->page->load_page('front_page', array(
-        'page_data' => array(
-          'title' => 'รายการถ่ายทอดสด | ทั้งหมด',
-          'chanal_data' => $this->link_model->load_chanal('*', null)
-        )
-      ));
+      header('Location:'.base_url().'chanal/9999/');
+      die();
     }else{
       $this->stream($chanal_id);
     }

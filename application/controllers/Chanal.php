@@ -22,7 +22,7 @@ class Chanal extends CI_Controller {
     $this->load->model('link_model');
     $chanal_id = c_number($this->uri->segment(2));
     if($chanal_id===null){
-      header('Location:'.base_url().'chanal/9999/');
+      header('Location:'.base_url().'chanal/1/');
       die();
     }else{
       $this->stream($chanal_id);

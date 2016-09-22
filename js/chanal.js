@@ -47,17 +47,21 @@ function ObjMobile(config){
 }
 function ObjPlayerss(config){
   function init(){
-    if(window.mobilecheck()===false){
-      document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3 id="vdo-names">'+config.name+'</h3></div>';
-      ObjDesktop(config);
-    }
-    else{
-      document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3 id="vdo-names">'+config.name+'</h3></div>';
-      ObjMobile(config);
+    if(config.live===true&&(config.timestamp-parseInt(new Date().getTime()/1000))>0){
+      document.querySelector("#paste-vdo").innerHTML += '<h3 id="vdo-names">'+config.name+'</h3>';
+      setInterval_live_time(config, MainProg);
+    }else{
+      if(window.mobilecheck()===false){
+        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3 id="vdo-names">'+config.name+'</h3></div>';
+        ObjDesktop(config);
+      }
+      else{
+        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3 id="vdo-names">'+config.name+'</h3></div>';
+        ObjMobile(config);
+      }
     }
   }
   init();
-  if(config.live===true&&(config.timestamp-parseInt(new Date().getTime()/1000))>0){ setInterval_live_time(config, MainProg); }
 }
 var params = {
   wmode: "direct",

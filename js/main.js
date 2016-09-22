@@ -101,15 +101,12 @@ function Page(Main){
     }
     function init(){
         Main.log("Init custom load event");
-        $(document).on("click", function(ev){
-            if($(ev.target).hasClass(Main.config.class_link_custom_load)){
-                ev.preventDefault();
-                Main.log("--");
-                Main.log("--");
-                Main.log("User click a custom load link.");
-                load_page_html(ev.target.href);
-            }
-            else{ }
+        $(document).on("click", "."+Main.config.class_link_custom_load, function(ev){
+            ev.preventDefault();
+            Main.log("--");
+            Main.log("--");
+            Main.log("User click a custom load link.");
+            load_page_html(ev.currentTarget.href);
         });
         Main.log("Init window popstate event");
         window.addEventListener('popstate', function(event){

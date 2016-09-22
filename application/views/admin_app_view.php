@@ -21,7 +21,7 @@ if ($this->input->post('custom_load') === 'true') {
 </head>
 <body>
 
-    <?php $this->load->view($page, $page_data); ?>
+    <div id="body"><?php $this->load->view($page, $page_data); ?></div>
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"
         integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>

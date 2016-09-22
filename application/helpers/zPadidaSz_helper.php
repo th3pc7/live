@@ -1,18 +1,5 @@
 <?php
 
-function c_text($str){
-    $str = trim($str);
-    if($str===''){ return null; }
-    else{ return htmlspecialchars($str); }
-}
-
-function c_number($str_number,$point=2){
-    if(is_numeric($str_number)){ return round(floatval($str_number),$point); }
-    else{ return null; }
-}
-
-<?php
-
 function get_video_data_from_youtube($my_id){
   $my_video_info = 'http://www.youtube.com/get_video_info?&video_id='.$my_id.'&asv=3&el=detailpage&hl=en_US';
   $ch_load = curl_init();

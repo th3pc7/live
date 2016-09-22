@@ -13,7 +13,7 @@
       <tr><td colspan=4 style="color:red;">ไม่มีสตรีม...ในขณะนี้</td></tr>
       <?php endif; ?>
       <?php foreach($links_data as $link): ?>
-      <tr style="color:<?php echo ($link['status']==='active') ? 'green':'red'; ?>;">
+      <tr style="color:<?php echo ($link['status']==='active') ? '#4eec00':'red'; ?>;">
         <td>
           <a href="#" title="เปิดใช้งาน" class="glyphicon glyphicon-ok" onclick="edit_st(event, <?php echo $link['id'] ?>, 'active')"></a> 
           <a href="#" title="ปิดใช้งาน" class="glyphicon glyphicon-remove" onclick="edit_st(event, <?php echo $link['id'] ?>, 'remove')"></a><br>

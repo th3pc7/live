@@ -29,7 +29,6 @@ class Link_model extends CI_Model{
     public function load_link($str_select, $array_where=false){
         return $this->db->select($str_select)
             // ->where($array_where)
-            ->limit(30)
             ->order_by('id','desc')
             ->get('live_match')->result_array();
     }
@@ -37,6 +36,13 @@ class Link_model extends CI_Model{
         return $this->db->select($str_select)
             ->join('live_match','live_chanal.match_id=live_match.id','left')
             ->get('live_chanal')->result_array();
+    }
+    public function get_where_link($str_select, $array_where){
+        return $this->db->select($str_select)
+            ->where($array_where)
+            ->join('live_match','live_chanal.match_id=live_match.id','left')
+            ->limit(1)
+            ->get('live_chanal')->row_array();
     }
     public function get_where_chanal($str_select, $array_where){
         return $this->db->select($str_select)

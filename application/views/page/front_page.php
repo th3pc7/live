@@ -14,6 +14,7 @@
 <?php
 
   foreach($chanal_data as $chanal){
+    break;
     if($chanal['chanal_status']==='disabled'){ continue; }
     echo '<img src="'.$chanal['image'].'">';
   }

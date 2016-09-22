@@ -53,5 +53,6 @@ $route['default_controller'] = 'chanal';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['(:num)'] = 'chanal';
 $route['chanal/(:any)'] = 'chanal';
-$route['video/(:any)'] = 'video';
+$route['video/(:any)'] = 'chanal';

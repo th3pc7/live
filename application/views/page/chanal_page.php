@@ -1,16 +1,6 @@
 <!-- ตัวแปร useScript ต้องใส่ทุกครั้ง สำหรับเรียก JS ของหน้า Page นั้นๆ -->
 <script> var useScript = false; </script>
 
-<?php
-
-  // หน้าเพจสามารถ echo ตัวแปรที่อยู่ใน $page_data จาก Controler ได้เลย //
-  // ตัวอย่าง echo $test;
-
-  // คำสั่งสำหรับ เรียกใช้ tmp และต้องใส่ $page_data ด้วยทุกครั้ง //
-  // ตัวอย่าง $this->page->load_tmp('login_tmp', $page_data);
-
-?>
-
 <style>
   html{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
@@ -139,13 +129,25 @@ var params = {
   allowScriptAccess: "always",
   bgcolor: "#000000"
 };
-new ObjPlayerss({
-  name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
-  link: '<?php echo $chanal_data['link']; ?>',
-  ratio: 16/9,
-  width: document.querySelector("#paste-vdo").offsetWidth,
-  number: 1,
-  datetime: '<?php echo $chanal_data['datetime']; ?>'
-});
+
+<?php if($chanal_data!==null): ?>
+  new ObjPlayerss({
+    name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
+    link: '<?php echo $chanal_data['link']; ?>',
+    ratio: 16/9,
+    width: document.querySelector("#paste-vdo").offsetWidth,
+    number: 1,
+    datetime: '<?php echo $chanal_data['datetime']; ?>'
+  });
+<?php else: ?>
+  new ObjPlayerss({
+    name: '',
+    link: 'welcome',
+    ratio: 16/9,
+    width: document.querySelector("#paste-vdo").offsetWidth,
+    number: 1,
+    datetime: ''
+  });
+<?php endif; ?>
 
 </script>

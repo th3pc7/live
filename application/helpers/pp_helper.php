@@ -12,6 +12,7 @@ function c_number($str_number,$point=2){
 }
 
 function get_video_data_from_youtube($vdo_id){
+  ob_start();
   $load_video_info = 'http://www.youtube.com/get_video_info?&video_id='.$vdo_id.'&asv=3&el=detailpage&hl=en_US';
   $ch_load = curl_init();
   curl_setopt($ch_load, CURLOPT_URL, $load_video_info);
@@ -32,7 +33,7 @@ function get_video_data_from_youtube($vdo_id){
   $quality = '';
   $ipbits = '';
   $itag = '';
-  $sig = '';
+  $s = '';
   $ip = '';
   $i = -1;
   foreach($my_formats_array as $format){
@@ -42,7 +43,7 @@ function get_video_data_from_youtube($vdo_id){
     $all_vdo_format[$i]['quality'] = $quality;
     $type = explode(';',$type);
     $all_vdo_format[$i]['type'] = $type[0];
-    $all_vdo_format[$i]['url'] = urldecode($url).'&signature='.$sig;
+    $all_vdo_format[$i]['url'] = urldecode($url).'&signature='.$s;
     parse_str(urldecode($url));
     $all_vdo_format[$i]['expires'] = time();
     $all_vdo_format[$i]['ipbits'] = $ipbits;

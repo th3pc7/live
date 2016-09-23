@@ -46,6 +46,7 @@ class Chanal extends CI_Controller {
     $chanal_data = $this->link_model->get_where_chanal('*', array(
       'chanal_id' => $view_id
     ));
+    $chanal_data = $this->modifi_link($chanal_data);
     if($chanal_data===null||$chanal_data['chanal_status']==='disabled'){
       header('Location:'.base_url());
       die();
@@ -64,6 +65,7 @@ class Chanal extends CI_Controller {
     $chanal_data = $this->link_model->get_where_link('*', array(
       'id' => $view_id
     ));
+    $chanal_data = $this->modifi_link($chanal_data);
     if($chanal_data===null||$chanal_data['status']==='remove'){
       header('Location:'.base_url());
       die();
@@ -76,6 +78,10 @@ class Chanal extends CI_Controller {
         'all_link' => $this->link_model->load_link('*', null)
       )
     ));
+  }
+
+  private function modifi_link($chanal_data){
+    return $chanal_data;
   }
 
 }

@@ -48,7 +48,7 @@ function ObjMobile(config){
 function ObjPlayerss(config){
   function paste_player(){
     if(config.name===""){ config.name = "Kan-eng TV"; }
-    if(window.mobilecheck()===false){
+    if(window.mobilecheck()===false&&navigator.userAgent.match(/iPad/i)===null){
       document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3>'+config.name+'</h3></div>';
       ObjDesktop(config);
     }
@@ -56,6 +56,11 @@ function ObjPlayerss(config){
       document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3>'+config.name+'</h3></div>';
       ObjMobile(config);
     }
+  }
+  function paste_logo_kaneng(){
+    var styles = "position:absolute;top:20px;right:22px;z-index:3;width:20%;";
+    var str = '<img style="' + styles + '" src="https://www.kan-eng.com/wp-content/themes/twentysixteen/img/logo-chng3.png">';
+    $("#paste-vdo").append(str);
   }
   function init(){
     if(config.live===true&&(config.timestamp-parseInt(new Date().getTime()/1000))>0){
@@ -66,6 +71,7 @@ function ObjPlayerss(config){
       setInterval_live_time(config, MainProg);
     }else{
       paste_player();
+      paste_logo_kaneng();
     }
   }
   init();

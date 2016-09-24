@@ -27,6 +27,7 @@
     margin:auto;
     position:relative;
   }
+  #paste-vdo{ position:relative; }
   #paste-vdo h3{
     font-size:24px;
     line-height:30px;
@@ -58,11 +59,11 @@
 
 
 <div class="main-contant">
-  <div class="banner-top"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div>
+  <div class="banner-top"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div>
   <div id="main-vdo">
     <!-- <div class="banner border"><img src="<?php echo base_url() ?>/match_image/VDOFrame.png"></div> -->
-    <div class="banner left"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamLeft.gif"></a></div>
-    <div class="banner right"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamRight.gif"></a></div>
+    <div class="banner left"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamLeft.gif"></a></div>
+    <div class="banner right"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamRight.gif"></a></div>
     <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
     <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
     <div id="paste-order-chanal">

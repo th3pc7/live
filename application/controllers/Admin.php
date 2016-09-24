@@ -12,9 +12,11 @@ class Admin extends CI_Controller {
 	}
 
   public function action(){
+    $this->load->model('account_model');
     $action_name = $this->input->post('action');
 		if($action_name===null){ die(); }
-		switch($action_name){
+    $this->account_model->added_action($this->account->id, $this->input->post('action'));
+		switch($action_name){ /// ถ้าเพิ่ม action อย่าลืม add action allow ใน model account
 			case 'add_link':
         $this->add_match();
 				break;
@@ -70,7 +72,7 @@ class Admin extends CI_Controller {
     $this->page->load_page('admin_page', array(
       'page_data' => array(
         'title' => 'staff | stream',
-        'links_data' => $this->link_model->load_link('*', null),
+        'links_data' => $this->link_model->load_link_admin('*', null),
         'chanal_data' => $this->link_model->load_chanal('*', null)
       )
     ));

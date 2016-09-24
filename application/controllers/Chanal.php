@@ -23,6 +23,8 @@ class Chanal extends CI_Controller {
     $type_view = c_text($this->uri->segment(1));
     $view_id = c_number($this->uri->segment(2));
     if($view_id===null||$type_view===null){
+      header('Location:'.base_url().'video/1/');
+      die();
       $this->page->load_page('chanal_page', array(
         'page_data' => array(
           'title' => 'รายการทั้งหมด | kan-eng.com',
@@ -48,7 +50,7 @@ class Chanal extends CI_Controller {
     ));
     $chanal_data = $this->modifi_link($chanal_data);
     if($chanal_data===null||$chanal_data['chanal_status']==='disabled'){
-      header('Location:'.base_url());
+      header('Location:'.base_url().'video/1/');
       die();
     }
     $this->page->load_page('chanal_page', array(
@@ -67,7 +69,7 @@ class Chanal extends CI_Controller {
     ));
     $chanal_data = $this->modifi_link($chanal_data);
     if($chanal_data===null||$chanal_data['status']==='remove'){
-      header('Location:'.base_url());
+      header('Location:'.base_url().'video/1/');
       die();
     }
     $this->page->load_page('chanal_page', array(

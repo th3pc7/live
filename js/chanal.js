@@ -46,19 +46,26 @@ function ObjMobile(config){
   jwplayer().onDisplayClick(function() { jwplayer().setFullscreen(true); });
 }
 function ObjPlayerss(config){
+  function paste_player(){
+    if(config.name===""){ config.name = "Kan-eng TV"; }
+    if(window.mobilecheck()===false){
+      document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3>'+config.name+'</h3></div>';
+      ObjDesktop(config);
+    }
+    else{
+      document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3>'+config.name+'</h3></div>';
+      ObjMobile(config);
+    }
+  }
   function init(){
     if(config.live===true&&(config.timestamp-parseInt(new Date().getTime()/1000))>0){
+      config.link = ".";
+      config.name = config.name.replace('<span style="color:yellow;">(สด)</span> ', '');
+      paste_player();
       document.querySelector("#paste-vdo").innerHTML += '<h3 id="vdo-names">'+config.name+'</h3>';
       setInterval_live_time(config, MainProg);
     }else{
-      if(window.mobilecheck()===false){
-        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3 id="vdo-names">'+config.name+'</h3></div>';
-        ObjDesktop(config);
-      }
-      else{
-        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3 id="vdo-names">'+config.name+'</h3></div>';
-        ObjMobile(config);
-      }
+      paste_player();
     }
   }
   init();
@@ -78,7 +85,8 @@ function setInterval_live_time(config, main){
     var sum = config.timestamp - parseInt(new Date().getTime()/1000);
     $("#vdo-names").html("จะเริ่มถ่ายทอดสดใน <span style='color:yellow;'>" + second_to_format(sum) + "</span>");
     if(sum<=0){
-      main.Page.customLoadUrl(window.location.href, true);
+      // main.Page.customLoadUrl(window.location.href, true);
+      window.location.reload();
     }
   },1000);
 }

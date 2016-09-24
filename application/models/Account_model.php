@@ -89,5 +89,15 @@ class Account_model extends CI_Model{
                 'percent' => $value
             ));
     }
+    public function added_action($user_id, $action){
+        $allow_action = array('add_link','edit','edit_st','edit_ch','edit_ch_st');
+        if(!array_search($action,$allow_action)){ return; }
+        $this->db->insert('live_admin_action',array(
+            'admin_id' => $user_id,
+            'action_name' => $action,
+            'datetime' => date('Y-m-d H:i:s')
+        ));
+        return $this->db->insert_id();
+    }
 
 }

@@ -1,3 +1,5 @@
+<?php $this->page->load_tmp('header_tmp', null); ?>
+
 <!-- ตัวแปร useScript ต้องใส่ทุกครั้ง สำหรับเรียก JS ของหน้า Page นั้นๆ -->
 <script> var useScript = "chanal"; </script>
 
@@ -23,6 +25,7 @@
     max-width:640px;
     padding:0px 10px;
     margin:auto;
+    position:relative;
   }
   #paste-vdo h3{
     font-size:24px;
@@ -41,26 +44,45 @@
     padding-bottom:16px;
   }
   object{max-width:100% !important;border:3px solid #ba0;}
+  .banner-top{ text-align:center;padding:0px 10px;padding-bottom:30px; }
+  .banner-top img{ max-width:100%; }
+  .banner{ position:absolute; }
+  .banner.border{ z-index:-1;left:0px; }
+  .banner.border img{ width:110%;position:relative;left:-5%; }
+  .banner.left{ right:105%; }
+  .banner.right{ left:105%; }
 </style>
 
+
+
+
+
 <div class="main-contant">
+  <div class="banner-top"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div>
   <div id="main-vdo">
+    <!-- <div class="banner border"><img src="<?php echo base_url() ?>/match_image/VDOFrame.png"></div> -->
+    <div class="banner left"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamLeft.gif"></a></div>
+    <div class="banner right"><a href="<?php echo base_url(); ?>สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamRight.gif"></a></div>
     <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
+    <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
     <div id="paste-order-chanal">
 
+      <div>
       <?php foreach($all_chanal_data as $the_chanal): ?>
         <?php if($the_chanal['chanal_status']==='enable'): ?>
-          <a class="box-img-chanal csLoad" href="<?php echo base_url() ?>chanal/<?php echo $the_chanal['chanal_id']; ?>/">
-            <img src="<?php echo $the_chanal['image']; ?>" style="max-width:100%;"><br>
+          <a class="box-img-chanal" href="<?php echo base_url() ?>chanal/<?php echo $the_chanal['chanal_id']; ?>/">
+            <img src="<?php echo ($the_chanal['image']) ? $the_chanal['image']:base_url().'match_image/kan-eng-tv.png'; ?>" style="max-width:100%;"><br>
             <?php echo ($the_chanal['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; ?>
             <?php echo $the_chanal['chanal_name']; ?>
           </a>
         <?php endif; ?>
       <?php endforeach; ?>
+      </div>
 
+      <h3 style="margin-top:40px;padding-bottom:10px;text-decoration:underline;">รายการอื่นๆ</h3>
       <?php foreach($all_link as $the_link): ?>
         <?php if($the_link['status']!=='remove'): ?>
-          <a class="box-img-chanal csLoad" href="<?php echo base_url() ?>video/<?php echo $the_link['id']; ?>/">
+          <a class="box-img-chanal" href="<?php echo base_url() ?>video/<?php echo $the_link['id']; ?>/">
             <img src="<?php echo $the_link['image']; ?>" style="max-width:100%;"><br>
             <?php echo $the_link['name']; ?>
           </a>
@@ -75,6 +97,8 @@
 <script src="//content.jwplatform.com/libraries/boaV57Mb.js"></script>
 <script>jwplayer.key="+VedR1JDxbkxu5qZLPq+MA4aNPcucdgBuRrqag==";</script>
 
+<?php //echo var_dump($chanal_data); ?>
+
 <script>
 
 function ready_page(){
@@ -85,12 +109,12 @@ function ready_page(){
       ratio: 16/9,
       width: document.querySelector("#paste-vdo").offsetWidth,
       number: 1,
-      live: <?php echo $chanal_data['live']; ?>,
+      live: <?php echo ($chanal_data['live']===null) ? 'false':$chanal_data['live']; ?>,
       timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
     });
   <?php else: ?>
     new ObjPlayerss({
-      name: '',
+      name: 'กดเลือกช่องด้านล่าง',
       link: 'welcome',
       ratio: 16/9,
       width: document.querySelector("#paste-vdo").offsetWidth,
@@ -102,3 +126,6 @@ function ready_page(){
 }
 
 </script>
+
+
+<?php $this->page->load_tmp('footer_tmp', null); ?>

@@ -70,6 +70,7 @@ function edit_st(ev, id, value){
 function ref_table(){
   $.post("action/",{ action: "ref_table" },function(data){
     $("#paste-table").html(data);
+    ref_table_2();
   }).fail(function(){ });
 }
 function ref_table_2(){

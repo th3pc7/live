@@ -16,6 +16,8 @@
 
 <div style="float:left;">
   <?php $this->page->load_tmp('form_add_tmp', null); ?>
+  <br>
+  <div style="padding-left:40px;"><a href="<?php echo base_url(); ?>logout/" type="button" class="btn btn-danger">Logout</a></div>
 </div>
 <div style="float:left;">
   <div id="paste-table_2"><?php $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>

@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
         $this->load->model('link_model');
         $this->page->load_tmp('table_link_tmp', array(
           'page_data' => array(
-            'links_data' => $this->link_model->load_link('*', null)
+            'links_data' => $this->link_model->load_link_admin('*', null)
         )));
         break;
       case 'ref_table_2':

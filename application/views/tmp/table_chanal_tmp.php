@@ -16,6 +16,7 @@
           <a href="#" title="ถ่ายทอดสด" class="glyphicon glyphicon-facetime-video" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'live', 'true')"></a>&nbsp;
           <a href="#" title="เทป" class="glyphicon glyphicon-cd" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'live', 'false')"></a><br>
           <?php echo ($chanal['live']==='true') ? '<span style="color:yellow;">(สด)</span> '.$chanal['datetime'] : '----------'; ?>
+          <?php if($chanal['live']==='true'&&$chanal['chanal_status']!=='disabled'){ $dt = new DateTime($chanal['datetime']); echo '<span class="countdown-ad" data-datetime="'.$dt->getTimestamp().'"></span>'; unset($dt); } ?>
         </td>
         <td>
           <a href="#" title="เปิดใช้งาน" class="glyphicon glyphicon-ok" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'chanal_status', 'enable')"></a>&nbsp;
@@ -36,3 +37,32 @@
     </tbody>
   </table>
 </div>
+
+
+<script>
+  function second_to_format(s){
+    var hour = (s-(s%3600))/3600;
+    var sec = s - (hour*3600);
+    var min = (sec-(sec%60))/60;
+    sec = sec - (min*60);
+    hour = (hour.toString().length == 2) ? hour.toString():"0"+hour.toString();
+    min = (min.toString().length == 2) ? min.toString():"0"+min.toString();
+    sec = (sec.toString().length == 2) ? sec.toString():"0"+sec.toString();
+    return hour+":"+min+":"+sec;
+  }
+  var all_count = document.getElementsByClassName("countdown-ad");
+  if(all_count.length>0){
+    setInterval(function(){
+      for(var i=0;i<all_count.length;i++){
+        var elm = all_count[i];
+        var sum = parseInt(elm.dataset.datetime) - parseInt(new Date().getTime()/1000);
+        if(sum < 0){ continue; }
+        else{
+          var text_count = second_to_format(sum);
+          elm.innerHTML = text_count;
+        }
+      }
+    },1000);
+  }
+</script>
+

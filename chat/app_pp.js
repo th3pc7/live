@@ -38,6 +38,12 @@ function PP_server_socket(){
 function Client(serv, socket){
   
   function init(){
+    socket.on('login', function(data){
+      //
+    });
+    socket.on('send_msg', function(data){
+      //
+    });
     socket.on('disconnect', function(){
       console.log('Socket id :' + socket.id + ' is disconnected.');
     });

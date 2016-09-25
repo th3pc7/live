@@ -53,9 +53,77 @@
   .banner.border img{ width:110%;position:relative;left:-5%; }
   .banner.left{ right:105%; }
   .banner.right{ left:105%; }
+
+  /* chat */
+  #chat-pp{
+    width:100%;
+    position:relative;
+    background-color:#fff;
+    padding:10px;
+    margin-top:20px;
+  }
+  #chat-pp input{
+    width:85%;
+    margin-right:5%;
+    color:#000!important;
+  }
+  #chat-pp button{
+    width:10%;
+  }
+  #show-chat-pp{
+    width:100%;
+    padding:10px;
+    border:1px solid #aaa;
+    margin-bottom:2px;
+    height:200px;
+    color:#000!important;
+  }
+  #head-chat-pp{
+    width:100%;
+    color:red!important;
+    margin-bottom:8px;
+    font-size:20px;
+    cursor:pointer;
+  }
+  #head-chat-pp:hover{
+    background-color:rgba(255,30,50,.2);
+  }
+  #head-chat-pp span{position:relative;top:3px;margin-right:3px;}
 </style>
 
-
+<script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
+<script>
+  var cols = false;
+  function toggless(){
+    if(cols){ uncol(); }
+    else{ col(); }
+    cols = !cols;
+  }
+  function col(){
+    document.getElementById("show-chat-pp").style.display = "none";
+    document.getElementById("input-chat").style.display = "none";
+  }
+  function uncol(){
+    document.getElementById("show-chat-pp").style.display = "block";
+    document.getElementById("input-chat").style.display = "block";
+  }
+  var socket = io('https://139.162.33.12:3000/');
+    socket.on("connect",function(){
+      console.log("now connect to server");
+      socket.on("msg",function(data){
+        document.getElementById("show-chat-pp").innerHTML += "\n"+data;
+        // $('#show-chat-pp').scrollTop($('#show-chat-pp')[0].scrollHeight);
+        document.getElementById("show-chat-pp").scrollTop = 100000000;
+      });
+    });
+    socket.on("disconnect",function(){
+      console.log("now disconnect to server");
+    });
+    function sendder(){
+      socket.emit("msg",document.getElementById("ppp").value);
+      document.getElementById("ppp").value = "";
+    }
+</script>
 
 
 
@@ -67,6 +135,13 @@
     <div class="banner right"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamRight.gif"></a></div>
     <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
     <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
+
+    <div id="chat-pp">
+      <div id="head-chat-pp" onclick="toggless();"><span class="glyphicon glyphicon-comment"></span> Chat</div>
+      <textarea id="show-chat-pp" readonly>ระบบล็อคอิน และอื่นๆกำลังจะมาในเร็วๆนี้</textarea>
+      <div id="input-chat"><input id="ppp" type="text" placeholder="ใส่ข้อความที่นี่"><button type="button" class="btn btn-info" onclick="sendder();">ส่ง</button></div>
+    </div>
+
     <div id="paste-order-chanal">
 
       <div>

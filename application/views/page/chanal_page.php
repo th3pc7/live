@@ -78,6 +78,7 @@
     height:200px;
     color:#000!important;
   }
+  #input-chat{  }
   #head-chat-pp{
     width:100%;
     color:red!important;
@@ -106,14 +107,18 @@
   function uncol(){
     document.getElementById("show-chat-pp").style.display = "block";
     document.getElementById("input-chat").style.display = "block";
+    document.getElementById("show-chat-pp").scrollTop = 100000000;
   }
-  var socket = io('https://139.162.33.12:3000/');
+  var socket = io('http://139.162.33.12:3000/');
     socket.on("connect",function(){
       console.log("now connect to server");
       socket.on("msg",function(data){
         document.getElementById("show-chat-pp").innerHTML += "\n"+data;
         // $('#show-chat-pp').scrollTop($('#show-chat-pp')[0].scrollHeight);
         document.getElementById("show-chat-pp").scrollTop = 100000000;
+      });
+      socket.on("upuser",function(data){
+        document.getElementById("paste-user-online").innerHTML = data;
       });
     });
     socket.on("disconnect",function(){
@@ -137,7 +142,7 @@
     <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
 
     <div id="chat-pp">
-      <div id="head-chat-pp" onclick="toggless();"><span class="glyphicon glyphicon-comment"></span> Chat</div>
+      <div id="head-chat-pp" onclick="toggless();"><span class="glyphicon glyphicon-comment"></span> Chat : <span id="paste-user-online"></span> ออนไลน์</div>
       <textarea id="show-chat-pp" readonly>ระบบล็อคอิน และอื่นๆกำลังจะมาในเร็วๆนี้</textarea>
       <div id="input-chat"><input id="ppp" type="text" placeholder="ใส่ข้อความที่นี่"><button type="button" class="btn btn-info" onclick="sendder();">ส่ง</button></div>
     </div>

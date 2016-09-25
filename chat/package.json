@@ -1,0 +1,9 @@
+{
+  "name": "pp-live-chat",
+  "version": "1.0.0",
+  "description": "this chat for kan-eng.com",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.4.8"
+  }
+}

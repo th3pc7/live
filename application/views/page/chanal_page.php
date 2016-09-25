@@ -6,10 +6,10 @@
 <style>
   html{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
-    background: rgb(19,22,27); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(19,22,27,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(19,22,27,1) 0%, rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(19,22,27,1) 0%, rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: rgb(128,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(128,0,0,1) 0%, rgba(76, 13, 13,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(128,0,0,1) 0%, rgba(76, 13, 13,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(128,0,0,1) 0%, rgba(76, 13, 13,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
     min-height:100%;
   }
@@ -20,6 +20,7 @@
     margin:auto;
     padding-top:100px;
   }
+  a.box-img-chanal{ color:#fff;line-height:24px; }
   #main-vdo{
     width:100%;
     max-width:640px;
@@ -59,7 +60,7 @@
 
 
 <div class="main-contant">
-  <div class="banner-top"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div>
+  <!-- <div class="banner-top"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div> -->
   <div id="main-vdo">
     <!-- <div class="banner border"><img src="<?php echo base_url() ?>/match_image/VDOFrame.png"></div> -->
     <div class="banner left"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamLeft.gif"></a></div>
@@ -80,7 +81,7 @@
       <?php endforeach; ?>
       </div>
 
-      <h3 style="margin-top:40px;padding-bottom:10px;text-decoration:underline;">รายการอื่นๆ</h3>
+      <h3 style="margin-top:70px;padding-bottom:30px;text-decoration:underline;font-size:24px!important;">รายการอื่นๆ</h3>
       <?php foreach($all_link as $the_link): ?>
         <?php if($the_link['status']!=='remove'): ?>
           <a class="box-img-chanal" href="<?php echo base_url() ?>video/<?php echo $the_link['id']; ?>/">

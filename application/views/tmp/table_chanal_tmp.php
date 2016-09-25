@@ -16,7 +16,7 @@
           <a href="#" title="ถ่ายทอดสด" class="glyphicon glyphicon-facetime-video" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'live', 'true')"></a>&nbsp;
           <a href="#" title="เทป" class="glyphicon glyphicon-cd" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'live', 'false')"></a><br>
           <?php echo ($chanal['live']==='true') ? '<span style="color:yellow;">(สด)</span> '.$chanal['datetime'] : '----------'; ?>
-          <?php if($chanal['live']==='true'&&$chanal['chanal_status']!=='disabled'){ $dt = new DateTime($chanal['datetime']); echo '<span class="countdown-ad" data-datetime="'.$dt->getTimestamp().'"></span>'; unset($dt); } ?>
+          <?php if($chanal['live']==='true'&&$chanal['chanal_status']!=='disabled'){ $dt = new DateTime($chanal['datetime']); echo '<span class="countdown-ad" data-datetime="'.$dt->getTimestamp().'" data-link="'.(base_url().'live/chanal/'.$chanal['chanal_id'].'/').'"></span>'; unset($dt); } ?>
         </td>
         <td>
           <a href="#" title="เปิดใช้งาน" class="glyphicon glyphicon-ok" onclick="edit_ch_st(event, <?php echo $chanal['chanal_id'] ?>, 'chanal_status', 'enable')"></a>&nbsp;
@@ -59,7 +59,9 @@
         if(sum < 0){ continue; }
         else{
           var text_count = second_to_format(sum);
-          elm.innerHTML = text_count;
+          var past = "";
+          if(sum<10800){ past = " --- <a href='"+elm.dataset.link+"' target='_blank'>วางลิ้งค์</a>"; }
+          elm.innerHTML = "<span style='color:red;'> --- " + text_count + past + "</span>";
         }
       }
     },1000);

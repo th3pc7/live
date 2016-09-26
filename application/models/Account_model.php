@@ -90,7 +90,7 @@ class Account_model extends CI_Model{
             ));
     }
     public function added_action($user_id, $action){
-        $allow_action = array('add_link','edit','edit_st','edit_ch','edit_ch_st');
+        $allow_action = array('add_link','edit','edit_st','edit_ch','edit_ch_st','add_movie','edit_mv','edit_mv_st');
         if(!array_search($action,$allow_action)){ return; }
         $this->db->insert('live_admin_action',array(
             'admin_id' => $user_id,

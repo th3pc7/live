@@ -30,7 +30,8 @@ class Chanal extends CI_Controller {
           'title' => 'รายการทั้งหมด | kan-eng.com',
           'chanal_data' => null,
           'all_chanal_data' => $this->link_model->load_chanal('*', null),
-          'all_link' => $this->link_model->load_link('*', null)
+          'all_link' => $this->link_model->load_link('*', null),
+          'all_movie_link' => $this->link_model->load_movie_link('*', null)
         )
       ));
     }else{
@@ -39,6 +40,9 @@ class Chanal extends CI_Controller {
       }
       elseif($type_view==='video'){
         $this->get_vdo($view_id);
+      }
+      elseif($type_view==='movie'){
+        $this->get_vdo_movie($view_id);
       }
       else{ echo 'zPadidaSz'; die(); }
     }
@@ -58,7 +62,8 @@ class Chanal extends CI_Controller {
         'title' => $chanal_data['name'].' | '.$chanal_data['chanal_name'],
         'chanal_data' => $chanal_data,
         'all_chanal_data' => $this->link_model->load_chanal('*', null),
-        'all_link' => $this->link_model->load_link('*', null)
+        'all_link' => $this->link_model->load_link('*', null),
+        'all_movie_link' => $this->link_model->load_movie_link('*', null)
       )
     ));
   }
@@ -77,7 +82,28 @@ class Chanal extends CI_Controller {
         'title' => $chanal_data['name'],
         'chanal_data' => $chanal_data,
         'all_chanal_data' => $this->link_model->load_chanal('*', null),
-        'all_link' => $this->link_model->load_link('*', null)
+        'all_link' => $this->link_model->load_link('*', null),
+        'all_movie_link' => $this->link_model->load_movie_link('*', null)
+      )
+    ));
+  }
+
+  private function get_vdo_movie($view_id){
+    $chanal_data = $this->link_model->get_where_movie_link('*', array(
+      'id' => $view_id
+    ));
+    $chanal_data = $this->modifi_link($chanal_data);
+    if($chanal_data===null||$chanal_data['status']==='remove'){
+      header('Location:'.base_url().'video/1/');
+      die();
+    }
+    $this->page->load_page('chanal_page', array(
+      'page_data' => array(
+        'title' => $chanal_data['name'],
+        'chanal_data' => $chanal_data,
+        'all_chanal_data' => $this->link_model->load_chanal('*', null),
+        'all_link' => $this->link_model->load_link('*', null),
+        'all_movie_link' => $this->link_model->load_movie_link('*', null)
       )
     ));
   }

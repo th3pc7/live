@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['(:num)'] = 'chanal';
 $route['chanal/(:any)'] = 'chanal';
 $route['video/(:any)'] = 'chanal';
+$route['movie/(:any)'] = 'chanal';

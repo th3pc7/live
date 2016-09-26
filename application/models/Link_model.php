@@ -16,10 +16,25 @@ class Link_model extends CI_Model{
         ));
         return $this->db->insert_id();
     }
+    public function add_movie($name, $link, $file_name, $owner_id){
+        $this->db->insert('live_movie',array(
+            'name' => $name,
+            'link' => $link,
+            'image' => $file_name,
+            'owner_id' => $owner_id,
+            'create_datetime' => date('Y-m-d H:i:s')
+        ));
+        return $this->db->insert_id();
+    }
     public function edit_link($id, $array_update){
         $this->db->where('id', $id)
             ->limit(1)
             ->update('live_match', $array_update); // $array_data = array('field'=>'value');
+    }
+    public function edit_link_movie($id, $array_update){
+        $this->db->where('id', $id)
+            ->limit(1)
+            ->update('live_movie', $array_update); // $array_data = array('field'=>'value');
     }
     public function edit_chanal($id, $array_update){
         $this->db->where('chanal_id', $id)
@@ -31,6 +46,12 @@ class Link_model extends CI_Model{
             // ->where($array_where)
             ->order_by('id','asc')
             ->get('live_match')->result_array();
+    }
+    public function load_movie_link($str_select, $array_where=false){
+        return $this->db->select($str_select)
+            // ->where($array_where)
+            ->order_by('id','asc')
+            ->get('live_movie')->result_array();
     }
     public function load_chanal($str_select, $array_where=false){
         return $this->db->select($str_select)
@@ -44,6 +65,13 @@ class Link_model extends CI_Model{
             ->limit(1)
             ->get('live_match')->row_array();
     }
+    public function get_where_movie_link($str_select, $array_where){
+        return $this->db->select($str_select)
+            ->where($array_where)
+            ->join('live_chanal','live_chanal.match_id=0','left')
+            ->limit(1)
+            ->get('live_movie')->row_array();
+    }
     public function get_where_chanal($str_select, $array_where){
         return $this->db->select($str_select)
             ->where($array_where)
@@ -56,6 +84,12 @@ class Link_model extends CI_Model{
             // ->where($array_where)
             ->order_by('id','desc')
             ->get('live_match')->result_array();
+    }
+    public function load_movie_link_admin($str_select, $array_where=false){
+        return $this->db->select($str_select)
+            // ->where($array_where)
+            ->order_by('id','desc')
+            ->get('live_movie')->result_array();
     }
 
 }

@@ -1,5 +1,5 @@
 <!-- ตัวแปร useScript ต้องใส่ทุกครั้ง สำหรับเรียก JS ของหน้า Page นั้นๆ -->
-<script> var useScript = "admin"; </script>
+<script> var useScript = "admin_movie"; </script>
 
 <?php
 
@@ -17,7 +17,6 @@
   <?php $this->page->load_tmp('form_add_tmp', null); ?>
 </div>
 <div style="float:left;">
-  <div id="paste-table_2"><?php $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>
   <div id="paste-table"><?php $this->page->load_tmp('table_link_tmp', $page_data); ?></div>
 </div>
 <div class="clearfix"></div>

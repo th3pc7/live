@@ -176,6 +176,16 @@
         <?php endif; ?>
       <?php endforeach; ?>
 
+      <h3 style="margin-top:70px;padding-bottom:30px;text-decoration:underline;font-size:24px!important;">หนังเด็ดหนังดัง</h3>
+      <?php foreach($all_movie_link as $the_link): ?>
+        <?php if($the_link['status']!=='remove'): ?>
+          <a class="box-img-chanal" href="<?php echo base_url() ?>movie/<?php echo $the_link['id']; ?>/">
+            <img src="<?php echo $the_link['image']; ?>" style="max-width:100%;"><br>
+            <?php echo $the_link['name']; ?>
+          </a>
+        <?php endif; ?>
+      <?php endforeach; ?>
+
     </div>
   </div>
 

@@ -27,7 +27,7 @@ function add_match(ev) {
       if(data==="pass"){ alert("สำเร็จ"); ref_table(); }
       else{ alert(data); }
     },
-    error: function(){ },
+    error: function(){ alert("ล้มเหลว"); },
     data: formData,
     cache: false,
     contentType: false,

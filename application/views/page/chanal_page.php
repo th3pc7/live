@@ -16,7 +16,8 @@
   body{background-color:transparent !important;}
   .main-contant{
     width:100%;
-    max-width:1200px;
+    max-width:1000px;
+    min-width:1000px;
     margin:auto;
     padding-top:100px;
   }
@@ -25,8 +26,8 @@
     width:100%;
     max-width:640px;
     padding:0px 10px;
-    margin:auto;
     position:relative;
+    float:left;
   }
   #paste-vdo{ position:relative; }
   #paste-vdo h3{
@@ -46,106 +47,110 @@
     padding-bottom:16px;
   }
   object{max-width:100% !important;border:3px solid #ba0;}
-  .banner-top{ text-align:center;padding:0px 10px;padding-bottom:30px; }
-  .banner-top img{ max-width:100%; }
-  .banner{ position:absolute; }
-  .banner.border{ z-index:-1;left:0px; }
-  .banner.border img{ width:110%;position:relative;left:-5%; }
-  .banner.left{ right:105%; }
-  .banner.right{ left:105%; }
 
   /* chat */
-  #chat-pp{
-    width:100%;
-    position:relative;
-    background-color:#fff;
-    padding:10px;
-    margin-top:20px;
-  }
-  #chat-pp input{
-    width:85%;
-    margin-right:5%;
-    color:#000!important;
-  }
-  #chat-pp button{
-    width:10%;
-  }
-  #show-chat-pp{
-    width:100%;
-    padding:10px;
-    border:1px solid #aaa;
-    margin-bottom:2px;
-    height:200px;
-    color:#000!important;
-  }
-  #input-chat{  }
-  #head-chat-pp{
-    width:100%;
-    color:red!important;
-    margin-bottom:8px;
-    font-size:20px;
-    cursor:pointer;
-  }
-  #head-chat-pp:hover{
-    background-color:rgba(255,30,50,.2);
-  }
-  #head-chat-pp span{position:relative;top:3px;margin-right:3px;}
+  #main-chat{
+      background-color:#fff;
+      padding:8px;
+      border:1px solid #ba0;
+      width:350px;
+      height:500px;
+      position:relative;
+      float:right;
+      color:#000;
+    }
+    #main-chat li{
+      width:100px;
+    }
+    #chat-input{
+      width:100%;
+      position:absolute;
+      bottom:8px;
+    }
+    #chat-input input{
+      width:265px;
+      padding:6px;
+      margin-right:6px;
+      position:relative;
+      top:1px;
+      border:1px solid #aaa;
+      border-radius:3px;
+    }
+    #chat-input button{
+      width:60px;
+    }
+    #main-chat .textarea{
+      resize:none;
+      margin-top:8px;
+      width:100%;
+      height:387px;
+      border:1px solid #ddd;
+      border-radius:2px;
+      padding:4px;
+      color:#888;
+      overflow-x:hidden;
+      overflow-y:auto;
+      cursor:default;
+    }
 </style>
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var cols = false;
-  function toggless(){
-    if(cols){ uncol(); }
-    else{ col(); }
-    cols = !cols;
-  }
-  function col(){
-    document.getElementById("show-chat-pp").style.display = "none";
-    document.getElementById("input-chat").style.display = "none";
-  }
-  function uncol(){
-    document.getElementById("show-chat-pp").style.display = "block";
-    document.getElementById("input-chat").style.display = "block";
-    document.getElementById("show-chat-pp").scrollTop = 100000000;
-  }
-  var socket = io('http://139.162.33.12:3000/');
+  var socket = io('http://139.162.33.12:2178/',{
+      reconnection: false
+  });
+  var my_chanal = "Sport<?php echo $chanal_data['chanal_id']; ?>";
     socket.on("connect",function(){
-      console.log("now connect to server");
-      socket.on("msg",function(data){
-        document.getElementById("show-chat-pp").innerHTML += "\n"+data;
-        // $('#show-chat-pp').scrollTop($('#show-chat-pp')[0].scrollHeight);
-        document.getElementById("show-chat-pp").scrollTop = 100000000;
-      });
-      socket.on("upuser",function(data){
-        document.getElementById("paste-user-online").innerHTML = data;
-      });
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      socket.on("msg", acceptMSG);
+      socket.emit("joinChanal", my_chanal);
     });
     socket.on("disconnect",function(){
-      console.log("now disconnect to server");
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+      elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
     });
-    function sendder(){
-      socket.emit("msg",document.getElementById("ppp").value);
-      document.getElementById("ppp").value = "";
+  function acceptMSG(data){
+    if(data.chanal===my_chanal){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-ch"));
     }
+    else if(data.chanal==="all"){
+      var elms = document.querySelectorAll(".textarea");
+      elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-all"));
+    }
+    else{
+      console.log("Error Chanal.");
+    }
+  }
+  function sendMSG(){
+    var msg = document.querySelector("#chat-ip-elm").value;
+    document.querySelector("#chat-ip-elm").value = "";
+    if(msg===""||msg===" "){ return; }
+    var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
+    socket.emit("msg",{chanal:sChanal, msg:msg});
+  }
+  function addBadge(mainElms){
+    if(mainElms.className==="active"){ return; }
+    mainElms.querySelector(".badge").innerHTML = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
+    mainElms.querySelector(".badge").style.display = "inline";
+  }
+  function clearBadge(mainElms){
+    mainElms.querySelector(".badge").style.display = "none";
+    mainElms.querySelector(".badge").innerHTML = "0";
+  }
 </script>
 
 
 
 <div class="main-contant">
-  <!-- <div class="banner-top"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamTop.gif"></a></div> -->
   <div id="main-vdo">
-    <!-- <div class="banner border"><img src="<?php echo base_url() ?>/match_image/VDOFrame.png"></div> -->
-    <div class="banner left"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamLeft.gif"></a></div>
-    <div class="banner right"><a href="https://www.kan-eng.com/สมัครสมาชิก/"><img src="<?php echo base_url() ?>/match_image/BannerStreamRight.gif"></a></div>
     <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
     <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
-
-    <div id="chat-pp">
-      <div id="head-chat-pp" onclick="toggless();"><span class="glyphicon glyphicon-comment"></span> Chat : <span id="paste-user-online"></span> ออนไลน์</div>
-      <textarea id="show-chat-pp" readonly>ระบบล็อคอิน และอื่นๆกำลังจะมาในเร็วๆนี้</textarea>
-      <div id="input-chat"><input id="ppp" type="text" placeholder="ใส่ข้อความที่นี่"><button type="button" class="btn btn-info" onclick="sendder();">ส่ง</button></div>
-    </div>
 
     <div id="paste-order-chanal">
 
@@ -173,6 +178,27 @@
 
     </div>
   </div>
+
+  <!-- paste chat -->
+  <div id="main-chat">
+    <ul class="nav nav-tabs" role="tablist">
+      <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+      <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="chat-chnal">
+        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="chat-all">
+        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      </div>
+    </div>
+    <div id="chat-input">
+      <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
 </div>
 
 <script type="text/javascript" src="https://yandex.st/swfobject/2.2/swfobject.min.js"></script>

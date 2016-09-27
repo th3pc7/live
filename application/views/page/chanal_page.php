@@ -21,7 +21,7 @@
     margin:auto;
     padding-top:100px;
   }
-  a.box-img-chanal{ color:#fff;line-height:24px; }
+  a.box-img-chanal{ color:#fff;line-height:24px;vertical-align:top; }
   #main-vdo{
     width:100%;
     max-width:640px;
@@ -105,13 +105,28 @@
       elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
       elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
       socket.on("msg", acceptMSG);
-      socket.emit("joinChanal", my_chanal);
+      init_chanal();
     });
     socket.on("disconnect",function(){
       var elms = document.querySelectorAll(".textarea");
       elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
       elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
     });
+  function init_chanal(){
+    console.log(my_chanal);
+    if(my_chanal==="Sport"){
+      console.log(123213123);
+      document.querySelector("#tab-li-ch").style.display = "none";
+      document.querySelector("#chat-chnal").style.display = "none";
+      document.querySelector("#tab-li-ch").className = "";
+      document.querySelector("#chat-chnal").className = "tab-pane";
+      document.querySelector("#tab-li-all").className = "active";
+      document.querySelector("#chat-all").className = "tab-pane active";
+    }
+    else{
+      socket.emit("joinChanal", my_chanal);
+    }
+  }
   function acceptMSG(data){
     if(data.chanal===my_chanal){
       var elms = document.querySelectorAll(".textarea");
@@ -136,7 +151,8 @@
   }
   function addBadge(mainElms){
     if(mainElms.className==="active"){ return; }
-    mainElms.querySelector(".badge").innerHTML = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
+    var sum = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
+    mainElms.querySelector(".badge").innerHTML = (sum>99) ? "99+" : sum;
     mainElms.querySelector(".badge").style.display = "inline";
   }
   function clearBadge(mainElms){
@@ -193,7 +209,7 @@
   <div id="main-chat">
     <ul class="nav nav-tabs" role="tablist">
       <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
-      <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+      <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="chat-chnal">

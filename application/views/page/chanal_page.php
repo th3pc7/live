@@ -13,7 +13,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
     min-height:100%;
   }
-  body{background-color:transparent !important;}
+  body{background-color:transparent !important;background-image: url(http://www.kan-eng.com/live/test-bg-4.png);}
   .main-contant{
     width:100%;
     max-width:1000px;
@@ -113,9 +113,7 @@
       elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
     });
   function init_chanal(){
-    console.log(my_chanal);
     if(my_chanal==="Sport"){
-      console.log(123213123);
       document.querySelector("#tab-li-ch").style.display = "none";
       document.querySelector("#chat-chnal").style.display = "none";
       document.querySelector("#tab-li-ch").className = "";
@@ -132,11 +130,13 @@
       var elms = document.querySelectorAll(".textarea");
       elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
       addBadge(document.querySelector("#tab-li-ch"));
+      elms[0].scrollTop = elms[0].scrollHeight;
     }
     else if(data.chanal==="all"){
       var elms = document.querySelectorAll(".textarea");
       elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
       addBadge(document.querySelector("#tab-li-all"));
+      elms[1].scrollTop = elms[1].scrollHeight;
     }
     else{
       console.log("Error Chanal.");
@@ -173,7 +173,7 @@
       <div>
       <?php foreach($all_chanal_data as $the_chanal): ?>
         <?php if($the_chanal['chanal_status']==='enable'): ?>
-          <a class="box-img-chanal" href="<?php echo base_url() ?>chanal/<?php echo $the_chanal['chanal_id']; ?>/">
+          <a class="box-img-chanal" href="<?php echo base_url() ?>channel/<?php echo $the_chanal['chanal_id']; ?>/">
             <img src="<?php echo ($the_chanal['image']) ? $the_chanal['image']:base_url().'match_image/kan-eng-tv.png'; ?>" style="max-width:100%;"><br>
             <?php echo ($the_chanal['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; ?>
             <?php echo $the_chanal['chanal_name']; ?>
@@ -223,6 +223,18 @@
       <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
     </div>
   </div>
+
+  <!-- facebook -->
+  <div style="left: 10px;top: 20px;position: relative;z-index:-1;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script></div><!-- facebook -->
+
   <div class="clearfix"></div>
 
 </div>

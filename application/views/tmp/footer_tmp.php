@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'pslxkittithada';
-    src: url('https://www.kan-eng.com/live/font/ap.eot');
-    src: url('https://www.kan-eng.com/live/font/ap.eot?#iefix') format('embedded-opentype'),
-    url('https://www.kan-eng.com/live/font/ap.woff2') format('woff2'),
-    url('https://www.kan-eng.com/live/font/ap.woff') format('woff'),
-    url('https://www.kan-eng.com/live/font/ap.ttf') format('truetype'),
-    url('https://www.kan-eng.com/live/font/ap.svg#pslxkittithadabold') format('svg');
+    src: url('http://www.kan-eng.com/live/font/ap.eot');
+    src: url('http://www.kan-eng.com/live/font/ap.eot?#iefix') format('embedded-opentype'),
+    url('http://www.kan-eng.com/live/font/ap.woff2') format('woff2'),
+    url('http://www.kan-eng.com/live/font/ap.woff') format('woff'),
+    url('http://www.kan-eng.com/live/font/ap.ttf') format('truetype'),
+    url('http://www.kan-eng.com/live/font/ap.svg#pslxkittithadabold') format('svg');
     font-weight: normal;
     font-style: normal;
 }

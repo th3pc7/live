@@ -35,7 +35,7 @@ class Chanal extends CI_Controller {
         )
       ));
     }else{
-      if($type_view==='chanal'){
+      if($type_view==='chanal'||$type_view==='channel'){
         $this->get_stream($view_id);
       }
       elseif($type_view==='video'){

@@ -68,7 +68,7 @@ class Link_model extends CI_Model{
     public function get_where_movie_link($str_select, $array_where){
         return $this->db->select($str_select)
             ->where($array_where)
-            ->join('live_chanal','live_chanal.match_id=0','left')
+            ->join('live_chanal','live_chanal.match_id<0','left')
             ->limit(1)
             ->get('live_movie')->row_array();
     }

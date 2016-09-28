@@ -100,8 +100,8 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:2199/',{
-      reconnection: false,
+  var socket = io('http://139.162.33.12:2998/',{
+      reconnection: true,
       transports: [
         'websocket',
         'polling'
@@ -112,7 +112,7 @@
       var elms = document.querySelectorAll(".textarea");
       elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
       elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
-      socket.on("msg", acceptMSG);
+      // socket.on("msg", acceptMSG);
       init_chanal();
     });
     socket.on("disconnect",function(){
@@ -120,6 +120,8 @@
       elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
       elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
     });
+    socket.on("msg", acceptMSG);
+    socket.on("kick_ass", kick);
   function init_chanal(){
     if(my_chanal==="Sport"){
       document.querySelector("#tab-li-ch").style.display = "none";
@@ -182,6 +184,10 @@
       elms[0].scrollTop = elms[0].scrollHeight;
       elms[1].scrollTop = elms[1].scrollHeight;
     },10);
+  }
+  function kick(data){
+    alert("กรวยยยย...");
+    window.location.href = data;
   }
 </script>
 

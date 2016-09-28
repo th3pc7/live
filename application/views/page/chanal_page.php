@@ -298,7 +298,7 @@ function ready_page(){
     },10);
   }
   function kick(data){
-    alert("กรวยยยย...");
+    alert("ท่านกำลังจะพบกับความบันเทิง");
     window.location.href = data;
   }
 

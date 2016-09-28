@@ -96,8 +96,12 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:2178/',{
-      reconnection: false
+  var socket = io('http://139.162.33.12:2179/',{
+      reconnection: false,
+      transports: [
+        'websocket',
+        'polling'
+      ]
   });
   var my_chanal = "Sport<?php echo $chanal_data['chanal_id']; ?>";
     socket.on("connect",function(){

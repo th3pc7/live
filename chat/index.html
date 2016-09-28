@@ -32,12 +32,108 @@
 
     // 1 Browser can Connect 261 time.
 
-    var socket = io('http://139.162.33.12:2179/',{reconnection:false});
-    socket.on("connect",function(){
-      socket.on("test",function(data){
-        console.log(data);
-      });
-    });
+    // var socket = io('http://139.162.33.12:2179/',{
+    //   reconnection:false,
+    //   transports: [
+    //     'websocket',
+    //     'polling'
+    //   ]
+    // });
+    // socket.on("connect",function(){
+    //   document.querySelector("#ssdd").innerHTML = "Connect";
+    //   socket.on("test",function(data){
+    //     console.log(data);
+    //   });
+    // });
+    // socket.on("disconnect",function(){
+    //   document.querySelector("#ssdd").innerHTML = "Disconnect";
+    // });
   </script>
+<script>
+  var socket = io('http://139.162.33.12:2179/',{
+      reconnection: false,
+      transports: [
+        'websocket',
+        'polling'
+      ]
+  });
+  var my_chanal = "Sport1";
+    socket.on("connect",function(){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      socket.on("msg", acceptMSG);
+      init_chanal();
+    });
+    socket.on("disconnect",function(){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+      elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+    });
+  function init_chanal(){
+    if(my_chanal==="Sport"){
+      document.querySelector("#tab-li-ch").style.display = "none";
+      document.querySelector("#chat-chnal").style.display = "none";
+      document.querySelector("#tab-li-ch").className = "";
+      document.querySelector("#chat-chnal").className = "tab-pane";
+      document.querySelector("#tab-li-all").className = "active";
+      document.querySelector("#chat-all").className = "tab-pane active";
+    }
+    else{
+      socket.emit("joinChanal", my_chanal);
+    }
+  }
+  function acceptMSG(data){
+    if(data.chanal===my_chanal){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-ch"));
+      elms[0].scrollTop = elms[0].scrollHeight;
+    }
+    else if(data.chanal==="all"){
+      var elms = document.querySelectorAll(".textarea");
+      elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-all"));
+      elms[1].scrollTop = elms[1].scrollHeight;
+    }
+    else{
+      console.log("Error Chanal.");
+    }
+  }
+  function sendMSG(){
+    var msg = document.querySelector("#chat-ip-elm").value;
+    document.querySelector("#chat-ip-elm").value = "";
+    if(msg===""||msg===" "){ return; }
+    var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
+    socket.emit("msg",{chanal:sChanal, msg:msg});
+  }
+  function addBadge(mainElms){
+    if(mainElms.className==="active"){ return; }
+    var sum = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
+    mainElms.querySelector(".badge").innerHTML = (sum>99) ? "99+" : sum;
+    mainElms.querySelector(".badge").style.display = "inline";
+  }
+  function clearBadge(mainElms){
+    mainElms.querySelector(".badge").style.display = "none";
+    mainElms.querySelector(".badge").innerHTML = "0";
+  }
+</script>
+<div id="main-chat">
+    <ul class="nav nav-tabs" role="tablist">
+      <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport1"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport1 <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+      <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="chat-chnal">
+        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="chat-all">
+        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      </div>
+    </div>
+    <div id="chat-input">
+      <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
+    </div>
+  </div>
 </body>
 </html>

@@ -64,7 +64,7 @@
       color:#000;
     }
     #main-chat li{
-      width:100px;
+      width:115px;
     }
     #chat-input{
       width:100%;
@@ -97,99 +97,6 @@
       cursor:default;
     }
 </style>
-
-<script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
-<script>
-  var socket = io('http://139.162.33.12:2998/',{
-      reconnection: true,
-      transports: [
-        'websocket',
-        'polling'
-      ]
-  });
-  var my_chanal = "Sport<?php echo $chanal_data['chanal_id']; ?>";
-    socket.on("connect",function(){
-      var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
-      elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
-      // socket.on("msg", acceptMSG);
-      init_chanal();
-    });
-    socket.on("disconnect",function(){
-      var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
-      elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
-    });
-    socket.on("msg", acceptMSG);
-    socket.on("kick_ass", kick);
-  function init_chanal(){
-    if(my_chanal==="Sport"){
-      document.querySelector("#tab-li-ch").style.display = "none";
-      document.querySelector("#chat-chnal").style.display = "none";
-      document.querySelector("#tab-li-ch").className = "";
-      document.querySelector("#chat-chnal").className = "tab-pane";
-      document.querySelector("#tab-li-all").className = "active";
-      document.querySelector("#chat-all").className = "tab-pane active";
-    }
-    else{
-      socket.emit("joinChanal", my_chanal);
-    }
-  }
-  function acceptMSG_cach(data){
-    while(data.length>0){
-      acceptMSG(data.shift());
-    }
-  }
-  function acceptMSG(data){
-    if(Array.isArray(data)){
-      acceptMSG_cach(data);
-      return;
-    }
-    if(data.chanal===my_chanal){
-      var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
-      addBadge(document.querySelector("#tab-li-ch"));
-    }
-    else if(data.chanal==="all"){
-      var elms = document.querySelectorAll(".textarea");
-      elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
-      addBadge(document.querySelector("#tab-li-all"));
-    }
-    else{
-      console.log("Error Chanal.");
-    }
-    update_scroll();
-  }
-  function sendMSG(){
-    var msg = document.querySelector("#chat-ip-elm").value;
-    document.querySelector("#chat-ip-elm").value = "";
-    if(msg===""||msg===" "){ return; }
-    var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
-    socket.emit("msg",{chanal:sChanal, msg:msg});
-  }
-  function addBadge(mainElms){
-    if(mainElms.className==="active"){ return; }
-    var sum = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
-    mainElms.querySelector(".badge").innerHTML = (sum>99) ? "99+" : sum;
-    mainElms.querySelector(".badge").style.display = "inline";
-  }
-  function clearBadge(mainElms){
-    mainElms.querySelector(".badge").style.display = "none";
-    mainElms.querySelector(".badge").innerHTML = "0";
-    update_scroll();
-  }
-  function update_scroll(){
-    var elms = document.querySelectorAll(".textarea");
-    setTimeout(function(){
-      elms[0].scrollTop = elms[0].scrollHeight;
-      elms[1].scrollTop = elms[1].scrollHeight;
-    },10);
-  }
-  function kick(data){
-    alert("กรวยยยย...");
-    window.location.href = data;
-  }
-</script>
 
 
 
@@ -279,7 +186,6 @@
 <?php //echo var_dump($chanal_data); ?>
 
 <script>
-
 function ready_page(){
   <?php if($chanal_data!==null): ?>
     new ObjPlayerss({
@@ -303,7 +209,110 @@ function ready_page(){
     });
   <?php endif; ?>
 }
+</script>
 
+<script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
+<script>
+  var socket = io('http://139.162.33.12:2998/',{
+      reconnection: true,
+      transports: [
+        'websocket',
+        'polling'
+      ]
+  });
+  var my_chanal = "Sport<?php echo $chanal_data['chanal_id']; ?>";
+    socket.on("connect",function(){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+      init_chanal();
+    });
+    socket.on("disconnect",function(){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+      elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+    });
+    socket.on("msg", acceptMSG);
+    socket.on("kick_ass", kick);
+  function init_chanal(){
+    if(my_chanal==="Sport"){
+      document.querySelector("#tab-li-ch").style.display = "none";
+      document.querySelector("#chat-chnal").style.display = "none";
+      document.querySelector("#tab-li-ch").className = "";
+      document.querySelector("#chat-chnal").className = "tab-pane";
+      document.querySelector("#tab-li-all").className = "active";
+      document.querySelector("#chat-all").className = "tab-pane active";
+    }
+    else{
+      socket.emit("joinChanal", my_chanal);
+    }
+  }
+  function acceptMSG_cach(data){
+    while(data.length>0){
+      acceptMSG(data.shift());
+    }
+  }
+  function acceptMSG(data){
+    if(Array.isArray(data)){
+      acceptMSG_cach(data);
+      return;
+    }
+    if(data.chanal===my_chanal){
+      var elms = document.querySelectorAll(".textarea");
+      elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-ch"));
+    }
+    else if(data.chanal==="all"){
+      var elms = document.querySelectorAll(".textarea");
+      elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
+      addBadge(document.querySelector("#tab-li-all"));
+    }
+    else{
+      console.log("Error Chanal.");
+    }
+    update_scroll();
+  }
+  function sendMSG(){
+    var msg = document.querySelector("#chat-ip-elm").value;
+    document.querySelector("#chat-ip-elm").value = "";
+    if(msg===""||msg===" "){ return; }
+    var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
+    socket.emit("msg",{chanal:sChanal, msg:msg});
+  }
+  function addBadge(mainElms){
+    if(mainElms.className==="active"){ return; }
+    var sum = parseInt(mainElms.querySelector(".badge").innerHTML) + 1;
+    mainElms.querySelector(".badge").innerHTML = (sum>99) ? "99+" : sum;
+    mainElms.querySelector(".badge").style.display = "inline";
+  }
+  function clearBadge(mainElms){
+    mainElms.querySelector(".badge").style.display = "none";
+    mainElms.querySelector(".badge").innerHTML = "0";
+    update_scroll();
+  }
+  function update_scroll(){
+    var elms = document.querySelectorAll(".textarea");
+    setTimeout(function(){
+      elms[0].scrollTop = elms[0].scrollHeight;
+      elms[1].scrollTop = elms[1].scrollHeight;
+    },10);
+  }
+  function kick(data){
+    alert("กรวยยยย...");
+    window.location.href = data;
+  }
+
+
+  <?php /*   admin code   */ if($this->account->class==='admin'): ?>
+    var adminId = <?php echo $this->account->id; ?>;
+    sendMSG = function(){
+      var msg = document.querySelector("#chat-ip-elm").value;
+      document.querySelector("#chat-ip-elm").value = "";
+      if(msg===""||msg===" "){ return; }
+      var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
+      socket.emit("msg",{chanal:sChanal, msg:msg, adm: adminId});
+    }
+  <?php endif; ?>
 </script>
 
 

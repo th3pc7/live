@@ -13,6 +13,8 @@ if ($this->input->post('custom_load') === 'true') {
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta property="fb:app_id" content="304646339905005" />
+    <meta property="fb:admins" content="168610180217199"/>
     <title><?php echo $page_data['title']; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"

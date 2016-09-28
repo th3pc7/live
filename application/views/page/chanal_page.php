@@ -48,15 +48,19 @@
   }
   object{max-width:100% !important;border:3px solid #ba0;}
 
+  #container-right{
+    float:right;
+    width:350px;
+  }
+
   /* chat */
   #main-chat{
       background-color:#fff;
       padding:8px;
       border:1px solid #ba0;
       width:350px;
-      height:500px;
+      height:350px;
       position:relative;
-      float:right;
       color:#000;
     }
     #main-chat li{
@@ -83,7 +87,7 @@
       resize:none;
       margin-top:8px;
       width:100%;
-      height:387px;
+      height:239px;
       border:1px solid #ddd;
       border-radius:2px;
       padding:4px;
@@ -96,7 +100,7 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:2179/',{
+  var socket = io('http://139.162.33.12:2199/',{
       reconnection: false,
       transports: [
         'websocket',
@@ -129,22 +133,30 @@
       socket.emit("joinChanal", my_chanal);
     }
   }
+  function acceptMSG_cach(data){
+    while(data.length>0){
+      acceptMSG(data.shift());
+    }
+  }
   function acceptMSG(data){
+    if(Array.isArray(data)){
+      acceptMSG_cach(data);
+      return;
+    }
     if(data.chanal===my_chanal){
       var elms = document.querySelectorAll(".textarea");
       elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
       addBadge(document.querySelector("#tab-li-ch"));
-      elms[0].scrollTop = elms[0].scrollHeight;
     }
     else if(data.chanal==="all"){
       var elms = document.querySelectorAll(".textarea");
       elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
       addBadge(document.querySelector("#tab-li-all"));
-      elms[1].scrollTop = elms[1].scrollHeight;
     }
     else{
       console.log("Error Chanal.");
     }
+    update_scroll();
   }
   function sendMSG(){
     var msg = document.querySelector("#chat-ip-elm").value;
@@ -162,6 +174,14 @@
   function clearBadge(mainElms){
     mainElms.querySelector(".badge").style.display = "none";
     mainElms.querySelector(".badge").innerHTML = "0";
+    update_scroll();
+  }
+  function update_scroll(){
+    var elms = document.querySelectorAll(".textarea");
+    setTimeout(function(){
+      elms[0].scrollTop = elms[0].scrollHeight;
+      elms[1].scrollTop = elms[1].scrollHeight;
+    },10);
   }
 </script>
 
@@ -209,35 +229,38 @@
     </div>
   </div>
 
-  <!-- paste chat -->
-  <div id="main-chat">
-    <ul class="nav nav-tabs" role="tablist">
-      <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
-      <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
-    </ul>
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="chat-chnal">
-        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+  <div id="container-right">
+    <!-- paste chat -->
+    <div id="main-chat">
+      <ul class="nav nav-tabs" role="tablist">
+        <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+        <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="chat-chnal">
+          <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="chat-all">
+          <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+        </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="chat-all">
-        <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      <div id="chat-input">
+        <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
       </div>
     </div>
-    <div id="chat-input">
-      <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
-    </div>
-  </div>
 
-  <!-- facebook -->
-  <div style="left: 10px;top: 20px;position: relative;z-index:-1;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.7";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script></div><!-- facebook -->
+    <!-- facebook -->
+    <div style="top:20px;position:relative;z-index:0;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-width="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>
+    <div style="background-color:#f6f7f9;position:absolute;"><div class="fb-comments" data-href="https://www.kan-eng.com" data-width="350" data-numposts="5"></div></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.7&appId=304646339905005";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script></div><!-- facebook -->
+  </div>
 
   <div class="clearfix"></div>
 

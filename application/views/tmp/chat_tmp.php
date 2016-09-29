@@ -65,7 +65,7 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:2998/',{
+  var socket = io('http://139.162.33.12:2999/',{
       reconnection: true,
       transports: [
         'websocket',
@@ -111,18 +111,21 @@
     }
     if(data.chanal===my_chanal){
       var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML += "<div>"+data.data.msg+"</div>";
+      pasteDataMSG(elms[0],data);
       addBadge(document.querySelector("#tab-li-ch"));
     }
     else if(data.chanal==="all"){
       var elms = document.querySelectorAll(".textarea");
-      elms[1].innerHTML += "<div>"+data.data.msg+"</div>";
+      pasteDataMSG(elms[1],data);
       addBadge(document.querySelector("#tab-li-all"));
     }
     else{
       console.log("Error Chanal.");
     }
     update_scroll();
+  }
+  function pasteDataMSG(elm, data){
+    elm.innerHTML += "<div>"+data.data.name+" : "+data.data.msg+"</div>";
   }
   function sendMSG(){
     var msg = document.querySelector("#chat-ip-elm").value;

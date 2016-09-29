@@ -40,6 +40,7 @@
     top: 56%;
     width: 100%;
     text-align: center;
+    font-size:35px!important;
   }
   #paste-order-chanal{
     padding-top:30px;

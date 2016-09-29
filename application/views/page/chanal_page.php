@@ -35,6 +35,12 @@
     line-height:30px;
     margin:0px;
   }
+  #vdo-names{
+    position: absolute;
+    top: 56%;
+    width: 100%;
+    text-align: center;
+  }
   #paste-order-chanal{
     padding-top:30px;
   }

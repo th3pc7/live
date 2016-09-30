@@ -43,8 +43,6 @@
     }
     .textarea img{
       display: block;
-      margin: auto;
-      margin-bottom: 10px;
     }
     .box_msg{
       border-top:1px solid #eee;
@@ -79,7 +77,7 @@
     </div>
   </div>
   <div id="chat-input">
-    <input id="chat-ip-elm" type="text"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
+    <input id="chat-ip-elm" type="text" onkeyup="checkEnter(event);"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
   </div>
 </div>
 
@@ -181,7 +179,7 @@
   }
   function getName(){
     if(getCookie("pp_user")===""){
-      document.cookie = "pp_user="+getRandomName(8);
+      document.cookie = "pp_user="+getRandomName(8)+"; expires=Thu, 19 Dec 2216 12:00:00 UTC";
     }
   }
   function getRandomName(n){
@@ -204,6 +202,9 @@
         }
     }
     return "";
+  }
+  function checkEnter(ev){
+    if(ev.keyCode===13){ sendMSG(); }
   }
 
 

@@ -158,6 +158,7 @@
     <div id="paste-order-chanal">
 
       <div>
+      <h3 style="padding-bottom:30px;text-decoration:underline;font-size:24px!important;margin-top:0px;">ถ่ายทอดสด ดูบอลออนไลน์</h3>
       <?php foreach($all_chanal_data as $the_chanal): ?>
         <?php if($the_chanal['chanal_status']==='enable'): ?>
           <a class="box-img-chanal" href="<?php echo base_url() ?>channel/<?php echo $the_chanal['chanal_id']; ?>/">
@@ -193,7 +194,7 @@
   </div>
 
   <div id="container-right">
-
+    <h1 style="margin-top:0px;">ดูบอลออนไลน์</h1><p>กันเองดอทคอม(Kan-eng.com) ดูบอลออนไลน์กับเราสิคะ เราถ่ายทอดสดฟุตบอล และกีฬาอื่นๆทุกวัน ไม่เว้นวันหยุดราชการ และท่านจะได้พบกับแอดมินเว็บผู้น่ารัก จะคอยพูดคุยเป็นเพื่อนไม่ให้เหงา</p>
     <!-- facebook -->
     <div style="top:20px;position:relative;z-index:0;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-width="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>
     <div id="fb-comment-fix" style="background-color:#f6f7f9;position:relative;"><div class="fb-comments" data-order-by="reverse_time" data-href="https://www.kan-eng.com" data-width="350" data-numposts="3"></div></div>

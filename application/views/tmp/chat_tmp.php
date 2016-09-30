@@ -36,7 +36,7 @@
       border:1px solid #ddd;
       border-radius:2px;
       padding:4px;
-      color:#888;
+      color:#545454;
       overflow-x:hidden;
       overflow-y:auto;
       cursor:default;
@@ -45,6 +45,23 @@
       display: block;
       margin: auto;
       margin-bottom: 10px;
+    }
+    .box_msg{
+      border-top:1px solid #eee;
+      margin-top:6px;
+      padding-top:6px;
+    }
+    .box_msg .pn{
+      font-weight:bold;
+    }
+    .box_msg .smsg{
+      padding-left:19px;
+      line-height:14px;
+      font-size:12px;
+    }
+    .box_msg .st{
+      color:#888;
+      font-size:10px;
     }
 </style>
 
@@ -131,7 +148,7 @@
     update_scroll();
   }
   function pasteDataMSG(elm, data){
-    elm.innerHTML += "<div>"+data.data.name+" : "+data.data.msg+"</div>";
+    elm.innerHTML += "<div class=\"box_msg\"><div class=\"pn\">"+data.data.name+" <span class=\"st\">2016/10/01</span></div><div class=\"smsg\">"+data.data.msg+"</div></div>";
   }
   function sendMSG(){
     var msg = document.querySelector("#chat-ip-elm").value;

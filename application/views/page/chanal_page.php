@@ -94,6 +94,12 @@
   @media screen and (max-width: 580px){
     .box-img-chanal{width:30%;}
   }
+  @media screen and (max-width: 540px){
+    #vdo-names{top:69%;font-size:30px!important;}
+  }
+  @media screen and (max-width: 444px){
+    #vdo-names{top:52%;font-size:20px!important;}
+  }
   @media screen and (max-width: 385px){
     #container-right{display:none;}
   }

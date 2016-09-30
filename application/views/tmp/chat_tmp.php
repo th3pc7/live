@@ -50,14 +50,14 @@
 
 <div id="main-chat">
   <ul class="nav nav-tabs" role="tablist">
-    <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
-    <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+    <li id="tab-li-all" onclick="clearBadge(this);" role="presentation" class="active" data-chanal="all"><a href="#chat-all" aria-controls="chat-all" role="tab" data-toggle="tab">All <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
+    <li id="tab-li-ch" onclick="clearBadge(this);" role="presentation" class="" data-chanal="Sport<?php echo $chanal_data['chanal_id']; ?>"><a href="#chat-chnal" aria-controls="chat-chnal" role="tab" data-toggle="tab">Sport<?php echo $chanal_data['chanal_id']; ?> <span class="badge" style="display:none;color:#fff;background-color:red;">0</span></a></li>
   </ul>
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="chat-chnal">
+    <div role="tabpanel" class="tab-pane active" id="chat-all">
       <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="chat-all">
+    <div role="tabpanel" class="tab-pane" id="chat-chnal">
       <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
     </div>
   </div>
@@ -117,12 +117,12 @@
     }
     if(data.chanal===my_chanal){
       var elms = document.querySelectorAll(".textarea");
-      pasteDataMSG(elms[0],data);
+      pasteDataMSG(elms[1],data);
       addBadge(document.querySelector("#tab-li-ch"));
     }
     else if(data.chanal==="all"){
       var elms = document.querySelectorAll(".textarea");
-      pasteDataMSG(elms[1],data);
+      pasteDataMSG(elms[0],data);
       addBadge(document.querySelector("#tab-li-all"));
     }
     else{

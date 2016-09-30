@@ -37,10 +37,11 @@
   }
   #vdo-names{
     position: absolute;
-    top: 56%;
+    top: 77%;
     width: 100%;
     text-align: center;
     font-size:35px!important;
+    text-shadow:0px 0px 10px rgba(50,0,0,1);
   }
   #paste-order-chanal{
     padding-top:30px;

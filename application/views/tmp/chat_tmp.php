@@ -41,6 +41,11 @@
       overflow-y:auto;
       cursor:default;
     }
+    .textarea img{
+      display: block;
+      margin: auto;
+      margin-bottom: 10px;
+    }
 </style>
 
 <div id="main-chat">
@@ -87,6 +92,7 @@
     socket.on("msg", acceptMSG);
     socket.on("kick_ass", kick);
   function init_chanal(){
+    getName();
     if(my_chanal==="Sport"){
       document.querySelector("#tab-li-ch").style.display = "none";
       document.querySelector("#chat-chnal").style.display = "none";
@@ -132,7 +138,7 @@
     document.querySelector("#chat-ip-elm").value = "";
     if(msg===""||msg===" "){ return; }
     var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
-    socket.emit("msg",{chanal:sChanal, msg:msg});
+    socket.emit("msg",{chanal:sChanal, name:getCookie("pp_user"), msg:msg});
   }
   function addBadge(mainElms){
     if(mainElms.className==="active"){ return; }
@@ -155,6 +161,32 @@
   function kick(data){
     alert("ท่านกำลังจะพบกับความบันเทิง");
     window.location.href = data;
+  }
+  function getName(){
+    if(getCookie("pp_user")===""){
+      document.cookie = "pp_user="+getRandomName(8);
+    }
+  }
+  function getRandomName(n){
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < n; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  }
+  function getCookie(cname){
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
   }
 
 

@@ -15,6 +15,7 @@ if ($this->input->post('custom_load') === 'true') {
     <meta charset="UTF-8">
     <meta property="fb:app_id" content="304646339905005" />
     <meta property="fb:admins" content="168610180217199"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_data['title']; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
@@ -23,11 +24,12 @@ if ($this->input->post('custom_load') === 'true') {
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"
         integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url(); ?>js/main.js"></script>
 </head>
 <body>
 
     <div id="body"><?php $this->load->view($page, $page_data); ?></div>
-    
+
+
+    <script src="<?php echo base_url(); ?>js/main.js"></script>
 </body>
 </html>

@@ -17,52 +17,111 @@
   .main-contant{
     width:100%;
     max-width:1000px;
-    min-width:1000px;
     margin:auto;
-    padding-top:100px;
+    padding-top:30px;
+    overflow:hidden;
   }
   a.box-img-chanal{ color:#fff;line-height:24px;vertical-align:top; }
+  
+  #fix-width-vdo{
+    width:100%;
+    max-width:620px;
+    float:left;
+  }
+  #fix-chat{
+    float:right;
+  }
+
+  #main-vdo{
+    width:100%;
+    max-width:640px;
+    padding-right:10px;
+    position:relative;
+    float:left;
+  }
+  #paste-vdo{ position:relative; }
+  #paste-vdo h3{
+    font-size:24px;
+    line-height:30px;
+    margin:0px;
+  }
+  #vdo-names{
+    position: absolute;
+    top: 77%;
+    width: 100%;
+    text-align: center;
+    font-size:35px!important;
+    text-shadow:0px 0px 10px rgba(50,0,0,1);
+  }
+  #paste-order-chanal{
+    padding-top:30px;
+  }
+  .box-img-chanal{
+    display:inline-block;
+    verticle-align:top;
+    width:23%;
+    position:relative;
+    margin-right:8px;
+    padding-bottom:16px;
+  }
+
+  #container-right{
+    float:right;
+    width:350px;
+  }
+
+  @media screen and (max-width: 1022px){
+    #fix-width-vdo,#fix-chat,#main-chat{float:none;margin:auto;}
+    #main-top{width:620px;margin:auto;}
+    #main-chat{width:100%!important;}
+  }
 
 </style>
 
 
 
 <div class="main-contant">
+  <script type="text/javascript" src="https://yandex.st/swfobject/2.2/swfobject.min.js"></script>
+  <script src="//content.jwplatform.com/libraries/boaV57Mb.js"></script>
+  <script>jwplayer.key="+VedR1JDxbkxu5qZLPq+MA4aNPcucdgBuRrqag==";</script>
+  <script>
+    function ready_page_2(){
+      <?php if($chanal_data!==null): ?>
+        var pl = new ObjPlayerss({
+          name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
+          link: '<?php echo $chanal_data['link']; ?>',
+          ratio: 16/9,
+          width: document.querySelector("#paste-vdo").offsetWidth,
+          number: 1,
+          live: <?php echo ($chanal_data['live']===null) ? 'false':$chanal_data['live']; ?>,
+          timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
+        });
+      <?php else: ?>
+        var pl = new ObjPlayerss({
+          name: 'กดเลือกช่องด้านล่าง',
+          link: 'welcome',
+          ratio: 16/9,
+          width: document.querySelector("#paste-vdo").offsetWidth,
+          number: 1,
+          live: false,
+          timestamp: ''
+        });
+      <?php endif; ?>
+    }
+  </script>
+
+  <div id="main-top">
+    <div id="fix-width-vdo">
+      <!-- paste chat -->
+      <?php $this->page->load_tmp("vdo_tmp",null); ?>
+    </div>
+
+    <!-- paste chat -->
+    <div id="fix-chat"><?php $this->page->load_tmp('chat_tmp',null); ?></div>
+  </div>
+  <div class="clearfix"></div>
+
   <div id="main-vdo">
-
-
-<script type="text/javascript" src="https://yandex.st/swfobject/2.2/swfobject.min.js"></script>
-<script src="//content.jwplatform.com/libraries/boaV57Mb.js"></script>
-<script>jwplayer.key="+VedR1JDxbkxu5qZLPq+MA4aNPcucdgBuRrqag==";</script>
-
-<script>
-function ready_page_2(){
-  <?php if($chanal_data!==null): ?>
-    var pl = new ObjPlayerss({
-      name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
-      link: '<?php echo $chanal_data['link']; ?>',
-      ratio: 16/9,
-      width: document.querySelector("#paste-vdo").offsetWidth,
-      number: 1,
-      live: <?php echo ($chanal_data['live']===null) ? 'false':$chanal_data['live']; ?>,
-      timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
-    });
-  <?php else: ?>
-    var pl = new ObjPlayerss({
-      name: 'กดเลือกช่องด้านล่าง',
-      link: 'welcome',
-      ratio: 16/9,
-      width: document.querySelector("#paste-vdo").offsetWidth,
-      number: 1,
-      live: false,
-      timestamp: ''
-    });
-  <?php endif; ?>
-}
-</script>
-    <?php $this->page->load_tmp("vdo_tmp",null); ?>
-
-    <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
 
     <div id="paste-order-chanal">
 
@@ -102,8 +161,6 @@ function ready_page_2(){
   </div>
 
   <div id="container-right">
-    <!-- paste chat -->
-    <?php $this->page->load_tmp('chat_tmp',null); ?>
 
     <!-- facebook -->
     <div style="top:20px;position:relative;z-index:0;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-width="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>

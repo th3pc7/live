@@ -1,46 +1,10 @@
 <style>
-  #main-vdo{
-    width:100%;
-    max-width:640px;
-    padding:0px 10px;
-    position:relative;
-    float:left;
-  }
-  #paste-vdo{ position:relative; }
-  #paste-vdo h3{
-    font-size:24px;
-    line-height:30px;
-    margin:0px;
-  }
-  #vdo-names{
-    position: absolute;
-    top: 77%;
-    width: 100%;
-    text-align: center;
-    font-size:35px!important;
-    text-shadow:0px 0px 10px rgba(50,0,0,1);
-  }
-  #paste-order-chanal{
-    padding-top:30px;
-  }
-  .box-img-chanal{
-    display:inline-block;
-    verticle-align:top;
-    width:23%;
-    position:relative;
-    margin-right:8px;
-    padding-bottom:16px;
-  }
   object{max-width:100% !important;border:3px solid #ba0;}
-
-  #container-right{
-    float:right;
-    width:350px;
-  }
 </style>
 
 
 <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
+<div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
 
 <script>
   $(document).ready(function(){

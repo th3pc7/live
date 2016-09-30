@@ -16,33 +16,42 @@
 </script>
 
 
-
 <nav class="navbar navbar-inverse">
+  <!-- fix width -->
+  <div style="margin:auto;max-width:1050px;">
   <div class="container-fluid">
-
-    <div style="margin:auto;max-width:1000px;">
-
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="https://www.kan-eng.com/">Kan-eng.com</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="https://www.kan-eng.com/live/">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">เมนูต่างๆ <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#" onclick="alert('เร็วๆนี้'); return false;">รายการสด</a></li>
-          <li><a href="#" onclick="alert('เร็วๆนี้'); return false;">รายการอื่นๆ</a></li>
-          <li><a href="#" onclick="alert('เร็วๆนี้'); return false;">หนังเด็ดหนังดัง</a></li>
-        </ul>
-      </li>
-      <li><a href="http://livescore.kan-eng.com/">ผลบอลสด</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="https://www.kan-eng.com/สมัครสมาชิก/"><span class="glyphicon glyphicon-user"></span> สมัครสมาชิก</a></li>
-      <!-- <li><a href="#" onclick="alert('เร็วๆนี้'); return false;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      -->
-    </ul>
-
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.kan-eng.com/">kan-eng.com</a>
     </div>
 
-  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<?php echo base_url(); ?>live/">Live</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ตารางถ่ายทอด <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">team Vs team</a></li>
+            <li><a href="#">team Vs team</a></li>
+            <li><a href="#">team Vs team</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">team Vs team (สำรอง)</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+        <li><a href="http://livescore.kan-eng.com/">ผลบอลสด</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://www.kan-eng.com/สมัครสมาชิก/"><span class="glyphicon glyphicon-user"></span> สมัครสมาชิก</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  </div><!-- /.for fix width -->
 </nav>

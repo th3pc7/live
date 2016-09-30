@@ -4,7 +4,7 @@
 
 
 <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
-<div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
+<div style="padding-top:10px;"></div>
 
 <script>
   $(document).ready(function(){
@@ -55,11 +55,11 @@
     function paste_player(){
       if(config.name===""){ config.name = "Kan-eng TV"; }
       if(window.mobilecheck()===false&&navigator.userAgent.match(/iPad/i)===null){
-        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3>'+config.name+'</h3></div>';
+        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">Browser ของท่านไม่รองรับ Flash</div><h3 class="h3-under">'+config.name+'</h3><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>';
         ObjDesktop(config);
       }
       else{
-        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3>'+config.name+'</h3></div>';
+        document.querySelector("#paste-vdo").innerHTML = '<div class="ms-boxx"><div id="vdo_id_'+config.number+'">กำลังโหลด...</div><h3 class="h3-under">'+config.name+'</h3><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>';
         ObjMobile(config);
       }
     }
@@ -130,7 +130,6 @@
       var sum = config.timestamp - parseInt(new Date().getTime()/1000);
       $("#vdo-names").html("จะเริ่มถ่ายทอดสดใน <span style='color:yellow;'>" + second_to_format(sum) + "</span>");
       if(sum<=0){
-        // main.Page.customLoadUrl(window.location.href, true);
         window.location.reload();
       }
     },1000);

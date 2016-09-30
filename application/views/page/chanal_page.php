@@ -53,6 +53,7 @@
     font-size:35px!important;
     text-shadow:0px 0px 10px rgba(50,0,0,1);
   }
+  .h3-under{padding-bottom:10px;}
   #paste-order-chanal{
     padding-top:30px;
   }
@@ -70,11 +71,36 @@
     width:350px;
   }
 
+  .jw-skin-seven{margin-bottom:10px;}
+
   @media screen and (max-width: 1022px){
     #fix-width-vdo,#fix-chat,#main-chat{float:none;margin:auto;}
     #main-top{width:620px;margin:auto;}
     #main-chat{width:100%!important;}
+    #chat-input input{width:536px!important;}
+    #main-vdo{float:none;width:620px;margin:auto;padding:0px!important;}
+    #container-right{float:none;width:620px;margin:auto;padding:0px!important;}
+    #fb-comment-fix{width:350px;}
+    .h3-under{position:relative;display:inline-block;padding-right:16px;top:3px;padding-bottom:0px;}
   }
+  @media screen and (max-width: 670px){
+    #main-top{width:100%;margin:0px;padding:0px 10px;}
+    #chat-input input{width:80%!important;}
+    #chat-input button{width:10%!important;}
+    #main-vdo{float:none;width:100%;margin:0px;padding:0px 10px!important;}
+    #container-right{padding:0px 10px!important;}
+    .h3-under{font-size:18px!important;;position:relative;display:inline-block;padding-right:16px;top:3px;padding-bottom:0px;}
+  }
+  @media screen and (max-width: 580px){
+    .box-img-chanal{width:30%;}
+  }
+  @media screen and (max-width: 385px){
+    #container-right{display:none;}
+  }
+  @media screen and (max-width: 350px){
+    .box-img-chanal{width:44%;}
+  }
+
 
 </style>
 
@@ -116,7 +142,7 @@
       <?php $this->page->load_tmp("vdo_tmp",null); ?>
     </div>
 
-    <!-- paste chat -->
+    <!-- paste chat --> 
     <div id="fix-chat"><?php $this->page->load_tmp('chat_tmp',null); ?></div>
   </div>
   <div class="clearfix"></div>
@@ -164,7 +190,7 @@
 
     <!-- facebook -->
     <div style="top:20px;position:relative;z-index:0;">  <div class="fb-page" data-href="https://www.facebook.com/kaneng168/" data-width="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kaneng168/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kaneng168/">เสร่อ Kan-Eng.CoM</a></blockquote></div>
-    <div style="background-color:#f6f7f9;position:relative;"><div class="fb-comments" data-order-by="reverse_time" data-href="https://www.kan-eng.com" data-width="350" data-numposts="3"></div></div>
+    <div id="fb-comment-fix" style="background-color:#f6f7f9;position:relative;"><div class="fb-comments" data-order-by="reverse_time" data-href="https://www.kan-eng.com" data-width="350" data-numposts="3"></div></div>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];

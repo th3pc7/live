@@ -17,7 +17,7 @@
 
 
 <nav class="navbar navbar-inverse">
-  <!-- fix width -->
+  <!-- fix width --> 
   <div style="margin:auto;max-width:1050px;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->

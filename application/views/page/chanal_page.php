@@ -1,7 +1,7 @@
 <?php $this->page->load_tmp('header_tmp', null); ?>
 
 <!-- ตัวแปร useScript ต้องใส่ทุกครั้ง สำหรับเรียก JS ของหน้า Page นั้นๆ -->
-<script> var useScript = "chanal"; </script>
+<script> var useScript = false; </script>
 
 <style>
   html{
@@ -22,44 +22,6 @@
     padding-top:100px;
   }
   a.box-img-chanal{ color:#fff;line-height:24px;vertical-align:top; }
-  #main-vdo{
-    width:100%;
-    max-width:640px;
-    padding:0px 10px;
-    position:relative;
-    float:left;
-  }
-  #paste-vdo{ position:relative; }
-  #paste-vdo h3{
-    font-size:24px;
-    line-height:30px;
-    margin:0px;
-  }
-  #vdo-names{
-    position: absolute;
-    top: 77%;
-    width: 100%;
-    text-align: center;
-    font-size:35px!important;
-    text-shadow:0px 0px 10px rgba(50,0,0,1);
-  }
-  #paste-order-chanal{
-    padding-top:30px;
-  }
-  .box-img-chanal{
-    display:inline-block;
-    verticle-align:top;
-    width:23%;
-    position:relative;
-    margin-right:8px;
-    padding-bottom:16px;
-  }
-  object{max-width:100% !important;border:3px solid #ba0;}
-
-  #container-right{
-    float:right;
-    width:350px;
-  }
 
 </style>
 
@@ -67,7 +29,39 @@
 
 <div class="main-contant">
   <div id="main-vdo">
-    <div id="paste-vdo"><img style="width:100%;" src="<?php echo base_url().'fixed-ratio-vdo.png'; ?>"></div>
+
+
+<script type="text/javascript" src="https://yandex.st/swfobject/2.2/swfobject.min.js"></script>
+<script src="//content.jwplatform.com/libraries/boaV57Mb.js"></script>
+<script>jwplayer.key="+VedR1JDxbkxu5qZLPq+MA4aNPcucdgBuRrqag==";</script>
+
+<script>
+function ready_page_2(){
+  <?php if($chanal_data!==null): ?>
+    var pl = new ObjPlayerss({
+      name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
+      link: '<?php echo $chanal_data['link']; ?>',
+      ratio: 16/9,
+      width: document.querySelector("#paste-vdo").offsetWidth,
+      number: 1,
+      live: <?php echo ($chanal_data['live']===null) ? 'false':$chanal_data['live']; ?>,
+      timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
+    });
+  <?php else: ?>
+    var pl = new ObjPlayerss({
+      name: 'กดเลือกช่องด้านล่าง',
+      link: 'welcome',
+      ratio: 16/9,
+      width: document.querySelector("#paste-vdo").offsetWidth,
+      number: 1,
+      live: false,
+      timestamp: ''
+    });
+  <?php endif; ?>
+}
+</script>
+    <?php $this->page->load_tmp("vdo_tmp",null); ?>
+
     <div style="padding-top:10px;"><button onclick="window.location.reload();" type="button" class="btn btn-success">Refresh</button> ดูไม่ได้กดปุ่มนี้</div>
 
     <div id="paste-order-chanal">
@@ -127,37 +121,6 @@
   <div class="clearfix"></div>
 
 </div>
-
-
-<script type="text/javascript" src="https://yandex.st/swfobject/2.2/swfobject.min.js"></script>
-<script src="//content.jwplatform.com/libraries/boaV57Mb.js"></script>
-<script>jwplayer.key="+VedR1JDxbkxu5qZLPq+MA4aNPcucdgBuRrqag==";</script>
-
-<script>
-function ready_page(){
-  <?php if($chanal_data!==null): ?>
-    new ObjPlayerss({
-      name: '<?php echo ($chanal_data['live']==='true') ? '<span style="color:yellow;">(สด)</span> ':''; echo $chanal_data['name']; ?>',
-      link: '<?php echo $chanal_data['link']; ?>',
-      ratio: 16/9,
-      width: document.querySelector("#paste-vdo").offsetWidth,
-      number: 1,
-      live: <?php echo ($chanal_data['live']===null) ? 'false':$chanal_data['live']; ?>,
-      timestamp: '<?php $dt = new DateTime($chanal_data['datetime']); echo $dt->getTimestamp(); ?>'
-    });
-  <?php else: ?>
-    new ObjPlayerss({
-      name: 'กดเลือกช่องด้านล่าง',
-      link: 'welcome',
-      ratio: 16/9,
-      width: document.querySelector("#paste-vdo").offsetWidth,
-      number: 1,
-      live: false,
-      timestamp: ''
-    });
-  <?php endif; ?>
-}
-</script>
 
 
 <?php $this->page->load_tmp('footer_tmp', null); ?>

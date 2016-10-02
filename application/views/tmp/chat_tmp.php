@@ -59,6 +59,9 @@
       line-height:14px;
       font-size:12px;
     }
+    .smsg a{
+      text-decoration: underline;
+    }
     .box_msg .st{
       color:#888;
       font-size:9px;
@@ -126,14 +129,27 @@
     elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
     elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
     init_chanal();
+    logined();
   });
   socket.on("disconnect",function(){
     var elms = document.querySelectorAll(".textarea");
     elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
     elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
   });
+
   socket.on("msg", acceptMSG);
   socket.on("kick_ass", kick);
+  socket.on("reff", reff);
+  socket.on("toChannel", toChannel);
+
+  function toChannel(data){
+    if(data.alert !== false){ alert(data.alert); }
+    window.location.href = data.url;
+  }
+  function reff(data){
+    if(data.alert !== false){ alert(data.alert); }
+    window.location.reload();
+  }
   function init_chanal(){
     clearOldCookie();
     <?php if($this->account->class!=='admin'): ?>
@@ -198,7 +214,7 @@
       data.data.time = hours+':'+minutes.substr(-2)+':'+seconds.substr(-2);
     }
     if(typeof data.fbID !== "undefined" && data.data.ascap){
-      data.data.name = '<a href="https://www.facebook.com/'+data.fbID+'/">'+data.data.name+'</a>';
+      data.data.name = '<a class="lis-name-user" data-href="https://www.facebook.com/'+data.fbID+'/" target="_blank" href="#">'+data.data.name+'</a>';
     }
     if(data.data.ascap){
       elm.innerHTML += "<div class=\"box_msg\"><img class=\"imgg\" src=\""+data.data.img+"\"><div class=\"pn user\">"+data.data.name+" <span class=\"st\">"+data.data.time+"</span><div class=\"st\"> กำลังดู "+data.data.in+"</div></div><div class=\"smsg\" unselectable=\"on\" onselectstart=\"return false;\" onmousedown=\"return false;\"> "+data.data.msg+"</div></div>";
@@ -308,7 +324,39 @@
     $(document).ready(function(){
       $("#ask-login").css({"display":"none"});
     });
+    $(document).on("click",".lis-name-user",function(ev){
+      ev.preventDefault();
+      show_cmd_admin(ev);
+      return false;
+    });
+    var cmd_to_id = 0;
+    function show_cmd_admin(ev){
+      console.log(ev);
+      cmd_to_id = ev.target.dataset.href.split("/")[3];
+      $("#div-cmd").css({display:"block",top:ev.clientY+"px",left:ev.pageX+"px"});
+    }
+    function goProfiles(){
+      window.open("https://www.facebook.com/"+cmd_to_id+"/",'_blank');
+    }
+    function to_reff(){
+      var alerts = getAlert("ข้อความบอก User");
+      socket.emit("msg",{"adm":adminId, toID:cmd_to_id, cmd:"reff",data:{alert:alerts}});
+    }
+    function to_toChannel(){
+      var alerts = getAlert("ข้อความบอก User");
+      var url = getAlert("url ที่จะให้ไป", "http://www.kan-eng.com/live/channel/1/");
+      if(url==false){ return; }
+      socket.emit("msg",{"adm":adminId ,toID:cmd_to_id, cmd:"toChannel",data:{alert:alerts,url:url}});
+    }
+
   <?php endif; ?>
+
+  function getAlert(msg, defaults){
+    if(typeof defaults == "undefined"){ var ret = prompt(msg); }
+    else{ var ret = prompt(msg, defaults); }
+    if(ret==null||ret==""){ return false; }
+    else{ return ret; }
+  }
 
 
   function statusChangeCallback(response){
@@ -334,13 +382,13 @@
   };
   function logined(){
     FB.api('/me?fields=name,picture', function(response){
-      console.log(response);
       namesUS = response.name;
       imgUrl = response.picture.data.url;
       var fb_id = response.id;
       if(socket.connected){
         socket.emit("loginFB", fb_id);
         $("#ask-login").css({display:"none"});
+        consoloe.log(fb_id);
       }
       else{
         var intv = setInterval(function(){
@@ -357,5 +405,21 @@
   function logouted(){
      $("#ask-login").css({display:"block"});
   }
-  console.log(socket.connected);
 </script>
+
+
+<?php /*   admin code   */ if($this->account->class==='admin'): ?>
+<style>
+  #div-cmd > div:hover{
+    cursor:pointer;
+    background-color:yellow;
+    color:#000;
+  }
+</style>
+<div id="div-cmd" onclick="this.style.display='none'"; style="position:fixed;z-index:999;background-color:red;top:300;left:300px;padding:10px;display:none;">
+  <div onclick="goProfiles();">ดูโปรไฟล์</div>
+  <div onclick="to_toChannel();">ส่งไป URL</div>
+  <div onclick="to_reff();">Refresh</div>
+  <div>ปิด</div>
+</div>
+<?php endif; ?>

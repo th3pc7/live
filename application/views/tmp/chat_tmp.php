@@ -111,7 +111,7 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:3268/',{
+  var socket = io('http://139.162.33.12:3269/',{
       reconnection: true,
       transports: [
         'websocket',
@@ -136,6 +136,9 @@
   socket.on("kick_ass", kick);
   function init_chanal(){
     clearOldCookie();
+    <?php if($this->account->class!=='admin'): ?>
+      socket.emit("joinChanal", "all");
+    <?php endif; ?>
     if(my_chanal==="Sport"){
       document.querySelector("#tab-li-ch").style.display = "none";
       document.querySelector("#chat-chnal").style.display = "none";
@@ -145,8 +148,13 @@
       document.querySelector("#chat-all").className = "tab-pane active";
     }
     else{
-      socket.emit("joinChanal", my_chanal);
+      <?php if($this->account->class!=='admin'): ?>
+        socket.emit("joinChanal", my_chanal);
+      <?php endif; ?>
     }
+    <?php if($this->account->class==='admin'): ?>
+      socket.emit("joinChanal", "zPadidaSz," + my_chanal);
+    <?php endif; ?>
   }
   function acceptMSG_cach(data){
     while(data.length>0){
@@ -154,6 +162,7 @@
     }
   }
   function acceptMSG(data){
+    console.log(data);
     if(Array.isArray(data)){
       acceptMSG_cach(data);
       return;
@@ -187,6 +196,9 @@
       var minutes = "0" + d.getMinutes();
       var seconds = "0" + d.getSeconds();
       data.data.time = hours+':'+minutes.substr(-2)+':'+seconds.substr(-2);
+    }
+    if(typeof data.fbID !== "undefined" && data.data.ascap){
+      data.data.name = '<a href="https://www.facebook.com/'+data.fbID+'/">'+data.data.name+'</a>';
     }
     if(data.data.ascap){
       elm.innerHTML += "<div class=\"box_msg\"><img class=\"imgg\" src=\""+data.data.img+"\"><div class=\"pn user\">"+data.data.name+" <span class=\"st\">"+data.data.time+"</span><div class=\"st\"> กำลังดู "+data.data.in+"</div></div><div class=\"smsg\" unselectable=\"on\" onselectstart=\"return false;\" onmousedown=\"return false;\"> "+data.data.msg+"</div></div>";
@@ -273,7 +285,6 @@
         .replace(/หี/g, "<div class=\"textBan\">ฮี</div>")
         .replace(/ไอ่/g, "<div class=\"textBan\">คุณชาย</div>")
         .replace(/ไอ้/g, "<div class=\"textBan\">คุณชาย</div>")
-        .replace(/อี/g, "<div class=\"textBan\">คุณหญิง</div>")
         .replace(/อี่/g, "<div class=\"textBan\">คุณหญิง</div>");
   }
 
@@ -298,6 +309,7 @@
       $("#ask-login").css({"display":"none"});
     });
   <?php endif; ?>
+
 
   function statusChangeCallback(response){
     if(response.status==='connected'){ logined(); }
@@ -325,10 +337,25 @@
       console.log(response);
       namesUS = response.name;
       imgUrl = response.picture.data.url;
-      $("#ask-login").css({display:"none"});
+      var fb_id = response.id;
+      if(socket.connected){
+        socket.emit("loginFB", fb_id);
+        $("#ask-login").css({display:"none"});
+      }
+      else{
+        var intv = setInterval(function(){
+          if(socket.connected){
+            socket.emit("loginFB", fb_id);
+            $("#ask-login").css({display:"none"});
+            clearInterval(intv);
+          }
+        },500);
+        $("#ask-login").html("เชื่อมต่อแชท...");
+      }
     });
   }
   function logouted(){
      $("#ask-login").css({display:"block"});
   }
+  console.log(socket.connected);
 </script>

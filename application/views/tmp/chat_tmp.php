@@ -1,5 +1,5 @@
 <style>
-  #main-chat{
+    #main-chat{
       background-color:#fff;
       padding:8px;
       border:1px solid #ba0;
@@ -46,20 +46,43 @@
     }
     .box_msg{
       border-top:1px solid #eee;
-      margin-top:6px;
-      padding-top:6px;
+      padding-top:2px;
+      padding-bottom:6px;
     }
     .box_msg .pn{
       font-weight:bold;
     }
+    .box_msg .pn.user{
+      line-height:16px;
+    }
     .box_msg .smsg{
-      padding-left:19px;
       line-height:14px;
       font-size:12px;
     }
     .box_msg .st{
       color:#888;
-      font-size:10px;
+      font-size:9px;
+    }
+    .box_msg .imgg{
+      float: left;
+      margin-right: 8px;
+      width: 29px;
+    }
+    #ask-login{
+      position:absolute;
+      z-index:10;
+      width:97.5%;
+      background-color:#fff;
+      height:100%;
+      line-height:23px;
+    }
+    .canselect{
+      cursor:text;
+    }
+    .textBan{
+      color:#ffa0a0;
+      display:inline;
+      text-decoration: line-through;
     }
 </style>
 
@@ -70,14 +93,17 @@
   </ul>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="chat-all">
-      <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      <div class="textarea"><div style='color:red;'>☻ This offline.</div></div>
     </div>
     <div role="tabpanel" class="tab-pane" id="chat-chnal">
-      <div class="textarea" unselectable="on" onselectstart="return false;" onmousedown="return false;"><div style='color:red;'>☻ This offline.</div></div>
+      <div class="textarea"><div style='color:red;'>☻ This offline.</div></div>
     </div>
   </div>
   <div id="chat-input">
-    <input id="chat-ip-elm" type="text" onkeyup="checkEnter(event);"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
+    <div id="ask-login">
+      Login to Chat &nbsp;<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    </div>
+    <input id="chat-ip-elm" type="text" onkeyup="checkEnter(event);" placeholder="ยาวสุด 160 ตัวอักษร"><button type="button" class="btn btn-info" onclick="sendMSG();">ส่ง</button>
   </div>
 </div>
 
@@ -85,7 +111,7 @@
 
 <script src="https://www.kan-eng.com/live/js/socket.io.js"></script>
 <script>
-  var socket = io('http://139.162.33.12:2999/',{
+  var socket = io('http://139.162.33.12:3268/',{
       reconnection: true,
       transports: [
         'websocket',
@@ -93,21 +119,23 @@
       ]
   });
   var my_chanal = "Sport<?php echo $chanal_data['chanal_id']; ?>";
-    socket.on("connect",function(){
-      var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
-      elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
-      init_chanal();
-    });
-    socket.on("disconnect",function(){
-      var elms = document.querySelectorAll(".textarea");
-      elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
-      elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
-    });
-    socket.on("msg", acceptMSG);
-    socket.on("kick_ass", kick);
+  var namesUS = "unknow";
+  var imgUrl = "#";
+  socket.on("connect",function(){
+    var elms = document.querySelectorAll(".textarea");
+    elms[0].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+    elms[1].innerHTML = "<div style='color:green;'>☻ This online.</div>";
+    init_chanal();
+  });
+  socket.on("disconnect",function(){
+    var elms = document.querySelectorAll(".textarea");
+    elms[0].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+    elms[1].innerHTML = "<div style='color:red;'>☻ This offline.</div>";
+  });
+  socket.on("msg", acceptMSG);
+  socket.on("kick_ass", kick);
   function init_chanal(){
-    getName();
+    clearOldCookie();
     if(my_chanal==="Sport"){
       document.querySelector("#tab-li-ch").style.display = "none";
       document.querySelector("#chat-chnal").style.display = "none";
@@ -146,14 +174,39 @@
     update_scroll();
   }
   function pasteDataMSG(elm, data){
-    elm.innerHTML += "<div class=\"box_msg\"><div class=\"pn\">"+data.data.name+" <span class=\"st\">2016/10/01</span></div><div class=\"smsg\">"+data.data.msg+"</div></div>";
+    if(data.data.ascap){
+      data.data.msg = replaceText(escapeHtml(data.data.msg));
+      data.data.img = escapeHtml(data.data.img);
+      data.data.name = escapeHtml(data.data.name);
+      data.data.in = escapeHtml(data.data.in);
+    }
+    if(isNaN(data.data.time)===true){ return; }
+    else{
+      var d = new Date(data.data.time);
+      var hours = d.getHours();
+      var minutes = "0" + d.getMinutes();
+      var seconds = "0" + d.getSeconds();
+      data.data.time = hours+':'+minutes.substr(-2)+':'+seconds.substr(-2);
+    }
+    if(data.data.ascap){
+      elm.innerHTML += "<div class=\"box_msg\"><img class=\"imgg\" src=\""+data.data.img+"\"><div class=\"pn user\">"+data.data.name+" <span class=\"st\">"+data.data.time+"</span><div class=\"st\"> กำลังดู "+data.data.in+"</div></div><div class=\"smsg\" unselectable=\"on\" onselectstart=\"return false;\" onmousedown=\"return false;\"> "+data.data.msg+"</div></div>";
+    }else{
+      elm.innerHTML += "<div class=\"box_msg\"><div class=\"pn\">"+data.data.name+" <span class=\"st\">"+data.data.time+"</span><div class=\"st\"> กำลังดู "+data.data.in+"</div></div><div class=\"smsg canselect\"> "+data.data.msg+"</div></div>";
+    }
   }
   function sendMSG(){
     var msg = document.querySelector("#chat-ip-elm").value;
     document.querySelector("#chat-ip-elm").value = "";
     if(msg===""||msg===" "){ return; }
     var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
-    socket.emit("msg",{chanal:sChanal, name:getCookie("pp_user"), msg:msg});
+    socket.emit("msg",{
+      chanal:sChanal,
+      name:namesUS.split(" ")[0],
+      msg:msg,
+      img:imgUrl,
+      inChanal:(my_chanal==="Sport")? document.title:"("+my_chanal+") "+document.title.split(" | ")[0],
+      timeStamp:new Date().getTime()
+    });
   }
   function addBadge(mainElms){
     if(mainElms.className==="active"){ return; }
@@ -177,17 +230,10 @@
     alert("ท่านกำลังจะพบกับความบันเทิง");
     window.location.href = data;
   }
-  function getName(){
-    if(getCookie("pp_user")===""){
-      document.cookie = "pp_user="+getRandomName(8)+"; expires=Thu, 19 Dec 2216 12:00:00 UTC";
+  function clearOldCookie(){
+    if(getCookie("pp_user")!==""){
+      document.cookie = "pp_user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
     }
-  }
-  function getRandomName(n){
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < n; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
   }
   function getCookie(cname){
     var name = cname + "=";
@@ -206,6 +252,30 @@
   function checkEnter(ev){
     if(ev.keyCode===13){ sendMSG(); }
   }
+  function escapeHtml(text){
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+  }
+  function replaceText(text){
+    return text
+        .replace(/เน็ตกาก/g, "<div class=\"textBan\">เน็ตไม่เร็ว</div>")
+        .replace(/เนตกาก/g, "<div class=\"textBan\">เน็ตไม่เร็ว</div>")
+        .replace(/อีดอก/g, "<div class=\"textBan\">ดีออก</div>")
+        .replace(/มึงตาย/g, "<div class=\"textBan\">ของฉันตาย</div>")
+        .replace(/ควย/g, "<div class=\"textBan\">รวย</div>")
+        .replace(/สัส/g, "<div class=\"textBan\">สิ่งมีชีวิต</div>")
+        .replace(/มึง/g, "<div class=\"textBan\">ท่าน</div>")
+        .replace(/เลว/g, "<div class=\"textBan\">เป็นศรี</div>")
+        .replace(/หี/g, "<div class=\"textBan\">ฮี</div>")
+        .replace(/ไอ่/g, "<div class=\"textBan\">คุณชาย</div>")
+        .replace(/ไอ้/g, "<div class=\"textBan\">คุณชาย</div>")
+        .replace(/อี/g, "<div class=\"textBan\">คุณหญิง</div>")
+        .replace(/อี่/g, "<div class=\"textBan\">คุณหญิง</div>");
+  }
 
 
   <?php /*   admin code   */ if($this->account->class==='admin'): ?>
@@ -215,7 +285,50 @@
       document.querySelector("#chat-ip-elm").value = "";
       if(msg===""||msg===" "){ return; }
       var sChanal = document.querySelector("#main-chat li.active").dataset.chanal;
-      socket.emit("msg",{chanal:sChanal, msg:msg, adm: adminId});
+      socket.emit("msg",{
+        chanal: sChanal,
+        msg: msg,
+        img: null,
+        adm: adminId,
+        timeStamp: new Date().getTime()
+      });
     }
+    logouted = function(){ }
+    $(document).ready(function(){
+      $("#ask-login").css({"display":"none"});
+    });
   <?php endif; ?>
+
+  function statusChangeCallback(response){
+    if(response.status==='connected'){ logined(); }
+    else if(response.status === 'not_authorized'){ logouted(); }
+    else{ logouted(); }
+  }
+  function checkLoginState(){
+    FB.getLoginStatus(function(response){
+      statusChangeCallback(response);
+    });
+  }
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '304646339905005',
+      cookie: true,
+      xfbml: true,
+      version: 'v2.5'
+    });
+    FB.getLoginStatus(function(response){
+      statusChangeCallback(response);
+    });
+  };
+  function logined(){
+    FB.api('/me?fields=name,picture', function(response){
+      console.log(response);
+      namesUS = response.name;
+      imgUrl = response.picture.data.url;
+      $("#ask-login").css({display:"none"});
+    });
+  }
+  function logouted(){
+     $("#ask-login").css({display:"block"});
+  }
 </script>

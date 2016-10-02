@@ -409,6 +409,10 @@
 
 
 <?php /*   admin code   */ if($this->account->class==='admin'): ?>
+<br>
+ใส่รูป &nbsp;&nbsp; &lt;img src=&quot;{ใส่ลิ้งค์}&quot;&gt; <br>
+ใส่ลิ้งค์ &nbsp;&nbsp; &lt;a href=&quot;{ใส่ลิ้งค์}&quot;&gt; {ใส่ข้อความ} &lt;/a&gt; <br>
+&lt;a href=&quot;{ใส่ลิ้งค์}&quot; target=&quot;_blank&quot;&gt; {ใส่ข้อความ} &lt;/a&gt; <br>
 <style>
   #div-cmd > div:hover{
     cursor:pointer;

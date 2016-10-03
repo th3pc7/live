@@ -17,7 +17,8 @@
   <?php $this->page->load_tmp('form_add_tmp', null); ?>
 </div>
 <div style="float:left;">
-  <div id="paste-table_2"><?php $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>
+  <div><?php $this->page->load_tmp('add_soccer_tmp', null); ?></div>
+  <div id="paste-table_2"><?php // $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>
   <div id="paste-table"><?php $this->page->load_tmp('table_link_tmp', $page_data); ?></div>
 </div>
 <div class="clearfix"></div>

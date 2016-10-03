@@ -43,6 +43,8 @@
     }
     .textarea img{
       display: block;
+      width: 150px;
+      margin:auto;
     }
     .box_msg{
       border-top:1px solid #eee;

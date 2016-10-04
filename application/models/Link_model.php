@@ -26,6 +26,22 @@ class Link_model extends CI_Model{
         ));
         return $this->db->insert_id();
     }
+    public function add_team($name,$file_name){
+        $this->db->insert('live_team',array(
+            'name' => $name,
+            'image' => $file_name
+        ));
+        return $this->db->insert_id();
+    }
+    public function add_soccer($code,$home,$away,$datetime){
+        $this->db->insert('live_soccer',array(
+            'code' => $code,
+            'team1' => $home,
+            'team2' => $away,
+            'datetime' => $datetime
+        ));
+        return $this->db->insert_id();
+    }
     public function edit_link($id, $array_update){
         $this->db->where('id', $id)
             ->limit(1)
@@ -81,7 +97,9 @@ class Link_model extends CI_Model{
     }
     public function load_link_admin($str_select, $array_where=false){
         return $this->db->select($str_select)
-            // ->where($array_where)
+            ->where(array(
+                'status'=>'active'
+            ))
             ->order_by('id','desc')
             ->get('live_match')->result_array();
     }
@@ -90,6 +108,30 @@ class Link_model extends CI_Model{
             // ->where($array_where)
             ->order_by('id','desc')
             ->get('live_movie')->result_array();
+    }
+    public function load_team_admin(){
+        return $this->db->select('*')
+            ->order_by('name','asc')
+            ->get('live_team')->result_array();
+    }
+    public function load_soccer_admin(){
+        $date = new DateTime('-2 hour');
+        return $this->db->select('*')
+            ->where(array(
+                'datetime >' => $date->format('Y-m-d H:i:s')
+            ))
+            ->order_by('datetime','asc')
+            ->get('live_soccer')->result_array();
+    }
+    public function same_code_soccer($code){
+        $data = $this->db->select('code')
+            ->where(array(
+                'code' => $code
+            ))
+            ->limit(1)
+            ->get('live_soccer')->result_array();
+        if(count($data)===0){ return false; }
+        else{ return true; }
     }
 
 }

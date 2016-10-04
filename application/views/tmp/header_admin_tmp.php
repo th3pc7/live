@@ -8,7 +8,7 @@
       <li><a href="<?php echo base_url(); ?>">Live</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">จัดการ <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="<?php echo base_url(); ?>admin/">ถ่ายทอดสด</a></li>
+          <li><a href="<?php echo base_url(); ?>admin/">รายการ(สด)</a></li>
           <li><a href="<?php echo base_url(); ?>admin/movie/">รายการหนัง</a></li>
         </ul>
       </li>

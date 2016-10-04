@@ -55,6 +55,12 @@ class Admin extends CI_Controller {
             'links_data' => $this->link_model->load_movie_link_admin('*', null)
         )));
         break;
+      case 'add_team':
+        $this->add_team();
+        break;
+      case 'add_soccer':
+        $this->add_soccer();
+        break;
       case 'edit_ch':
         $this->load->model('link_model');
         $this->link_model->edit_chanal($this->input->post('id'), array(
@@ -86,6 +92,14 @@ class Admin extends CI_Controller {
         ));
         echo 'pass';
         break;
+      case 'ref_tmp_soccer':
+        $this->load->model('link_model');
+        $this->page->load_tmp('add_soccer_tmp', array(
+          'page_data' => array(
+            'team_data' => $this->link_model->load_team_admin(),
+            'soccer_data' => $this->link_model->load_soccer_admin()
+        )));
+        break;
       default:
 				die();
 		}
@@ -97,11 +111,12 @@ class Admin extends CI_Controller {
       'page_data' => array(
         'title' => 'staff | stream',
         'links_data' => $this->link_model->load_link_admin('*', null),
-        'chanal_data' => $this->link_model->load_chanal('*', null)
+        'chanal_data' => $this->link_model->load_chanal('*', null),
+        'team_data' => $this->link_model->load_team_admin(),
+        'soccer_data' => $this->link_model->load_soccer_admin()
       )
     ));
   }
-
   public function movie(){
     $this->load->model('link_model');
     $this->page->load_page('admin_movie_page', array(
@@ -121,7 +136,6 @@ class Admin extends CI_Controller {
     $this->link_model->add_link($name, $link, base_url().'match_image/'.$name_file_upload, $this->account->id);
     echo 'pass';
   }
-
   private function add_movie(){
     $this->load->model('link_model');
     $this->load->library('upload_pp');
@@ -130,6 +144,43 @@ class Admin extends CI_Controller {
     $name_file_upload = $this->upload_pp->get_upload('file','./match_image/');
     $this->link_model->add_movie($name, $link, base_url().'match_image/'.$name_file_upload, $this->account->id);
     echo 'pass';
+  }
+  private function add_team(){
+    $this->load->model('link_model');
+    $this->load->library('upload_pp');
+    $team = c_text($this->input->post('team'));
+    $name_file_upload = $this->upload_pp->get_upload('file','./match_image/');
+    $this->link_model->add_team($team,base_url().'match_image/'.$name_file_upload);
+    echo 'pass';
+  }
+  private function add_soccer(){
+    $this->load->model('link_model');
+    $code = $this->get_new_code();
+    $home = c_text($this->input->post('home'));
+    $away = c_text($this->input->post('away'));
+    if($home===null||$away===null){
+      echo 'กรุณาเลือกทีมการแข่งขัน';
+      die();
+    }
+    $datetime = c_text($this->input->post('start_time'));
+    $this->link_model->add_soccer($code,$home,$away,$datetime);
+    echo 'pass';
+  }
+  private function get_new_code(){
+    $ret = $this->generateRandomString(8);
+    while($this->link_model->same_code_soccer($ret)===true){
+      $ret = $this->generateRandomString(8);
+    }
+    return $ret;
+  }
+  private function generateRandomString($length=10){
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i=0;$i<$length;$i++){
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
   }
 
 }

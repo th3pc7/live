@@ -74,9 +74,9 @@ function ref_table(){
   }).fail(function(){ });
 }
 function ref_table_2(){
-  $.post("action/",{ action: "ref_table_2" },function(data){
-    $("#paste-table_2").html(data);
-  }).fail(function(){ });
+  // $.post("action/",{ action: "ref_table_2" },function(data){
+  //   $("#paste-table_2").html(data);
+  // }).fail(function(){ });
 }
 
 function edit_ch(ev, id, field, defaults){

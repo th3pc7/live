@@ -13,12 +13,25 @@
 
 <?php $this->page->load_tmp('header_admin_tmp', null); ?>
 
-<div style="float:left;">
-  <?php $this->page->load_tmp('form_add_tmp', null); ?>
+<div>
+  <div style="float:left;">
+    <?php $this->page->load_tmp('form_add_team_tmp', null); ?>
+  </div>
+  <div id="form_adds_soccer" style="float:left;">
+    <div><?php $this->page->load_tmp('add_soccer_tmp', $page_data); ?></div>
+  </div>
+  <div class="clearfix"></div>
 </div>
-<div style="float:left;">
-  <div><?php $this->page->load_tmp('add_soccer_tmp', null); ?></div>
-  <div id="paste-table_2"><?php // $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>
-  <div id="paste-table"><?php $this->page->load_tmp('table_link_tmp', $page_data); ?></div>
+
+<hr style="border-color:yellow;margin:30px 40px;">
+
+<div>
+  <div style="float:left;">
+    <?php $this->page->load_tmp('form_add_tmp', null); ?>
+  </div>
+  <div style="float:left;">
+    <div id="paste-table_2"><?php // $this->page->load_tmp('table_chanal_tmp', $page_data); ?></div>
+    <div id="paste-table"><?php $this->page->load_tmp('table_link_tmp', $page_data); ?></div>
+  </div>
+  <div class="clearfix"></div>
 </div>
-<div class="clearfix"></div>

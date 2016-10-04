@@ -10,7 +10,10 @@
       <?php foreach($soccer_data as $soccer): ?>
       <tr>
         <td><?php echo $soccer['datetime']; ?></td>
-        <td><?php echo $soccer['team1'].'&nbsp; Vs &nbsp;'.$soccer['team2']; ?></td>
+        <td>
+          <a title="แก้ไขลิ้ง" href="#" class="glyphicon glyphicon-remove"></a><br>
+          <?php echo $soccer['team1'].'&nbsp; Vs &nbsp;'.$soccer['team2']; ?>
+        </td>
       </tr>
       <tr>
         <?php if($soccer['link']==='nolink'): ?>
